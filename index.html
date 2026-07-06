@@ -157,30 +157,21 @@
   .note-block { border-left:2px solid var(--red); background:var(--white); padding:10px 14px; margin-top:12px; font-size:10px; color:var(--mid); font-style:italic; font-weight:300; }
   .placeholder-box { background:var(--white); border:1px dashed var(--line); padding:48px; text-align:center; color:var(--soft); font-size:12px; font-style:italic; }
 
-  /* FUNNEL */
   .funnel-wrap { display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 0; }
   .funnel-step { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; color:var(--white); position:relative; transition:all 0.2s; }
-  .funnel-step:hover { transform:scale(1.01); }
   .funnel-label { font-size:11px; font-weight:600; letter-spacing:0.04em; z-index:2; }
   .funnel-val { font-family:'EB Garamond',serif; font-size:22px; font-weight:500; z-index:2; }
   .funnel-pct { font-size:9px; color:rgba(255,255,255,0.7); margin-left:8px; font-weight:300; }
-  .fs1 { width:100%; background:var(--ink); }
-  .fs2 { width:82%; background:#2A3D33; }
-  .fs3 { width:52%; background:#3D6B4A; }
-  .fs4 { width:28%; background:var(--red); }
-  /* ZONE BARS */
+  .fs1 { width:100%; background:var(--ink); } .fs2 { width:82%; background:#2A3D33; }
+  .fs3 { width:52%; background:#3D6B4A; } .fs4 { width:28%; background:var(--red); }
   .zone-row { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
   .zone-name { font-size:11px; color:var(--mid); min-width:150px; text-align:right; }
   .zone-bar-bg { flex:1; height:16px; background:var(--paper); position:relative; }
   .zone-bar { height:16px; background:#2A4A8A; transition:width 0.4s; }
   .zone-num { font-size:11px; font-weight:600; color:var(--ink); min-width:26px; }
-  /* OFFERS TABLE */
   .offer-stage { display:inline-block; padding:2px 8px; font-size:9px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
-  .os-completed { background:#EEF5EC; color:#2E6B24; }
-  .os-accepted { background:#E6F1FB; color:#185FA5; }
-  .os-arras { background:#FBF3E6; color:#8A5A10; }
-  .os-new { background:#F0EFEC; color:#505048; }
-
+  .os-completed { background:#EEF5EC; color:#2E6B24; } .os-accepted { background:#E6F1FB; color:#185FA5; }
+  .os-arras { background:#FBF3E6; color:#8A5A10; } .os-new { background:#F0EFEC; color:#505048; }
 </style>
 </head>
 <body>
@@ -193,8 +184,6 @@
   <button class="report-btn" onclick="switchReport('abril', event)">Abril 2026</button>
   <button class="report-btn active" onclick="switchReport('julio', event)">Julio 2026</button>
 </div>
-
-<!-- ABRIL REPORT -->
 <div class="report" id="report-abril">
   <nav class="nav">
     <div class="nav-tab active" onclick="switchTab('abril','cartera', event)">Cartera & Datos</div>
@@ -266,9 +255,242 @@
 
 <div class="view" id="abril-acciones">
   <div style="margin-bottom:28px;"><p class="section-eyebrow">Plan de acción</p><h2 class="section-title">Acciones de Marketing | Abril 2026</h2><hr class="section-rule"></div>
+  <div class="k-legend">
+    <span class="kl-item"><span class="kl-dot" style="background:#8A8A8A;"></span>Coming Up</span>
+    <span class="kl-item"><span class="kl-dot" style="background:#B87820;"></span>To Do</span>
+    <span class="kl-item"><span class="kl-dot" style="background:#2060A0;"></span>Doing</span>
+    <span class="kl-item"><span class="kl-dot" style="background:#2A6E20;"></span>Done</span>
+    <span class="kl-item"><span class="kl-dot" style="background:#E73838;"></span>In Discussion</span>
+  </div>
+  <div class="board">
+    <div class="col col-coming"><div class="col-head"><span class="col-name">Coming Up</span><span class="col-cnt">3</span></div><div class="col-body">
+      <div class="k-card"><p class="k-title">Andalucía Real Estate Forum</p><p class="k-meta">21 mayo</p><div class="k-tags"><span class="k-tag kt-offline">Offline</span></div></div>
+      <div class="k-card"><p class="k-title">Revisión listings cartera</p><p class="k-meta">Próximas semanas</p><div class="k-tags"><span class="k-tag kt-portal">Portales</span></div></div>
+      <div class="k-card"><p class="k-title">Análisis fiscal Miami</p><p class="k-meta">10-11 mayo</p><div class="k-tags"><span class="k-tag kt-offline">Offline</span></div></div>
+    </div></div>
+    <div class="col col-todo"><div class="col-head"><span class="col-name">To Do</span><span class="col-cnt">4</span></div><div class="col-body">
+      <div class="k-card"><p class="k-title">Definir países target Google Ads</p><div class="k-tags"><span class="k-tag kt-paid">Paid</span></div></div>
+      <div class="k-card"><p class="k-title">Leads Meta → registro CRM</p><div class="k-tags"><span class="k-tag kt-crm">CRM</span></div></div>
+      <div class="k-card"><p class="k-title">Vídeos LinkedIn con Stijn</p><div class="k-tags"><span class="k-tag kt-linkedin">LinkedIn</span></div></div>
+      <div class="k-card"><p class="k-title">Campaña 1M€ en España</p><div class="k-tags"><span class="k-tag kt-social">RRSS</span></div></div>
+    </div></div>
+    <div class="col col-doing"><div class="col-head"><span class="col-name">Doing</span><span class="col-cnt">2</span></div><div class="col-body">
+      <div class="k-card"><p class="k-title">Análisis caída calidad leads</p><div class="k-tags"><span class="k-tag kt-paid">Paid</span></div></div>
+      <div class="k-card"><p class="k-title">Reactivación BBDD Marbella</p><div class="k-tags"><span class="k-tag kt-email">Email</span></div></div>
+    </div></div>
+    <div class="col col-done"><div class="col-head"><span class="col-name">Done</span><span class="col-cnt">4</span></div><div class="col-body">
+      <div class="k-card"><p class="k-title">Banner Venta Privada off-market</p><div class="k-tags"><span class="k-tag kt-paid">Paid</span></div></div>
+      <div class="k-card"><p class="k-title">Email off-market MRB65806</p><div class="k-tags"><span class="k-tag kt-email">Email</span></div></div>
+      <div class="k-card"><p class="k-title">Mapeo zonas prioritarias</p><div class="k-tags"><span class="k-tag kt-offline">Offline</span></div></div>
+      <div class="k-card"><p class="k-title">Optimización Idealista</p><div class="k-tags"><span class="k-tag kt-portal">Portales</span></div></div>
+    </div></div>
+    <div class="col col-discuss"><div class="col-head"><span class="col-name">In Discussion</span><span class="col-cnt">2</span></div><div class="col-body">
+      <div class="k-card"><p class="k-title">Rightmove vs PropertyTop</p><div class="k-tags"><span class="k-tag kt-portal">Portales</span></div></div>
+      <div class="k-card"><p class="k-title">Colaboración Moneycorp USA</p><div class="k-tags"><span class="k-tag kt-offline">Offline</span></div></div>
+    </div></div>
+  </div>
+</div>
+</main>
+</div>
+<div class="report active" id="report-julio">
+  <nav class="nav">
+    <div class="nav-tab active" onclick="switchTab('julio','cartera', event)">Cartera & Datos</div>
+    <div class="nav-tab" onclick="switchTab('julio','leads', event)">Análisis de Leads</div>
+    <div class="nav-tab" onclick="switchTab('julio','acciones', event)">Acciones de Marketing</div>
+  </nav>
+  <main class="main">
+<div class="view active" id="julio-cartera">
+  <div style="margin-bottom:28px;"><p class="section-eyebrow">Resumen ejecutivo</p><h2 class="section-title">Cartera | Julio 2026</h2><hr class="section-rule"></div>
+  <div class="avail-strip">
+    <div class="avail-cell main"><p class="avail-eyebrow">Cartera Available</p><p class="avail-val">243</p><p class="avail-sub">propiedades disponibles totales</p></div>
+    <div class="avail-cell"><p class="avail-eyebrow">Live</p><p class="avail-val">185</p><p class="avail-sub">76.1% · en comercialización</p></div>
+    <div class="avail-cell"><p class="avail-eyebrow">Pending</p><p class="avail-val">52</p><p class="avail-sub">21.4% · en preparación</p></div>
+    <div class="avail-cell"><p class="avail-eyebrow">Confidential Sale</p><p class="avail-val">6</p><p class="avail-sub">2.5% · venta reservada</p></div>
+  </div>
+  <div class="split-grid" style="margin-bottom:14px;">
+    <div class="split-cell"><p class="split-label">Tipología · sobre cartera available (243)</p>
+      <div class="split-item"><span>Obra Nueva (ND)</span><span class="v">183</span></div><div class="stat-bar-bg" style="margin-bottom:10px;"><div class="stat-bar" style="width:75.3%;background:#E73838;"></div></div>
+      <div class="split-item"><span>Resale</span><span class="v">60</span></div><div class="stat-bar-bg"><div class="stat-bar" style="width:24.7%;background:#5A8A7A;"></div></div></div>
+    <div class="split-cell"><p class="split-label">Tipología · sobre live en web (185)</p>
+      <div class="split-item"><span>Obra Nueva (ND)</span><span class="v">149</span></div><div class="stat-bar-bg" style="margin-bottom:10px;"><div class="stat-bar" style="width:80.5%;background:#E73838;"></div></div>
+      <div class="split-item"><span>Resale</span><span class="v">36</span></div><div class="stat-bar-bg"><div class="stat-bar" style="width:19.5%;background:#5A8A7A;"></div></div></div>
+  </div>
+  <p style="font-size:10px;color:var(--soft);font-style:italic;margin-bottom:28px;">En proyectos de obra nueva con muchas unidades solo se publican algunas en web para no saturar; el inventario real disponible es mayor al listado en portal.</p>
+  <p class="section-eyebrow" style="margin-bottom:14px;">Cartera live en web · 185 propiedades</p>
+  <div class="kpi-grid">
+    <div class="kpi"><p class="kpi-eyebrow">Live en web</p><p class="kpi-val">185</p><p class="kpi-sub">ND 149 · resale 36</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Meta Score medio</p><p class="kpi-val">57.4%</p><p class="kpi-sub">objetivo: +80%</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Con leads activos</p><p class="kpi-val">49</p><p class="kpi-sub">27% de la cartera live</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Valor cartera live</p><p class="kpi-val">497M€</p><p class="kpi-sub">precio de venta</p></div>
+  </div>
+  <div class="kpi-grid-3">
+    <div class="kpi kpi-accent"><p class="kpi-eyebrow">Comisión potencial total</p><p class="kpi-val">23.7M€</p><p class="kpi-sub">sobre cartera live</p></div>
+    <div class="kpi kpi-accent"><p class="kpi-eyebrow">Comisión con leads</p><p class="kpi-val">8.8M€</p><p class="kpi-sub">49 propiedades activas</p></div>
+    <div class="kpi kpi-accent"><p class="kpi-eyebrow">Comisión sin leads</p><p class="kpi-val">14.9M€</p><p class="kpi-sub">133 prop. a activar</p></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card"><p class="card-eyebrow">Distribución</p><p class="card-title">Meta Score</p>
+      <div class="legend"><span class="legend-item"><span class="legend-dot" style="background:#2A6E20;"></span>Verde +80% · 73</span><span class="legend-item"><span class="legend-dot" style="background:#B87820;"></span>Amarillo 60-80% · 27</span><span class="legend-item"><span class="legend-dot" style="background:#E73838;"></span>Rojo &lt;60% · 82</span></div>
+      <div style="position:relative;height:190px;"><canvas id="jl-metaChart"></canvas></div></div>
+    <div class="card"><p class="card-eyebrow">Distribución</p><p class="card-title">Rango de precio</p>
+      <div class="legend"><span class="legend-item"><span class="legend-dot" style="background:#2A4A8A;"></span>&lt;1M · 42</span><span class="legend-item"><span class="legend-dot" style="background:#4A6AAA;"></span>1M-2M · 70</span><span class="legend-item"><span class="legend-dot" style="background:#8AAAD4;"></span>&gt;2M · 70</span></div>
+      <div style="position:relative;height:190px;"><canvas id="jl-precioChart"></canvas></div></div>
+  </div>
+  <div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Actividad</p><p class="card-title">Propiedades con leads vs. sin leads</p>
+    <div style="margin-bottom:18px;">
+      <div class="stat-row"><span class="stat-name">Sin leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:73.1%;background:#E73838;"></div></div><span class="stat-num">133</span></div>
+      <div class="stat-row"><span class="stat-name">Con leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:26.9%;background:#2A6E20;"></div></div><span class="stat-num">49</span></div>
+    </div><div style="position:relative;height:160px;"><canvas id="jl-leadsBarChart"></canvas></div></div>
+  <div class="grid-2">
+    <div>
+      <div class="alert-block"><p class="alert-eyebrow">Alerta · Meta Score crítico sin leads</p>
+        <div class="alert-row"><span>EST61091 · 1.020.000€</span><span class="badge b-dred">Meta 4%</span></div>
+        <div class="alert-row"><span>MRB67001 · 1.195.000€</span><span class="badge b-dred">Meta 15%</span></div>
+        <div class="alert-row"><span>MRB67008 · 2.300.000€</span><span class="badge b-dred">Meta 15%</span></div>
+        <div class="alert-row"><span>MRB67018 · 1.170.000€</span><span class="badge b-dred">Meta 15%</span></div>
+        <div class="alert-row"><span>MRB66981 · 1.314.000€</span><span class="badge b-dred">Meta 17%</span></div></div>
+      <div class="card" style="margin-top:16px;"><p class="card-eyebrow">Comisiones</p><p class="card-title">Desglose potencial</p>
+        <div class="comm-row"><span>Valor cartera live</span><span>496.647.638€</span></div>
+        <div class="comm-row"><span>Comisión media ponderada</span><span>4.78%</span></div>
+        <hr class="comm-divider">
+        <div class="comm-row"><span>Con leads · 182.6M€</span><span>8.844.355€</span></div>
+        <div class="comm-row"><span>Sin leads · 314.0M€</span><span>14.881.254€</span></div>
+        <hr class="comm-divider">
+        <div class="comm-total"><span>Total potencial</span><span>23.725.608€</span></div></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Ranking</p><p class="card-title">Top propiedades con leads activos</p>
+        <table class="data-table"><thead><tr><th>Ref.</th><th>Precio</th><th>% Com.</th><th>Enq.</th><th>Días</th><th>Meta</th></tr></thead>
+          <tbody>
+            <tr><td>MRB66691</td><td>430.000€</td><td>4%</td><td>15</td><td>105</td><td><span class="badge b-green">100%</span></td></tr>
+            <tr><td>MRB66238</td><td>450.000€</td><td>4%</td><td>12</td><td>146</td><td><span class="badge b-red">50%</span></td></tr>
+            <tr><td>MRB67266</td><td>1.550.000€</td><td>2.5%</td><td>9</td><td>96</td><td><span class="badge b-amber">64%</span></td></tr>
+            <tr><td>EST62060</td><td>583.000€</td><td>5%</td><td>7</td><td>336</td><td><span class="badge b-green">85%</span></td></tr>
+            <tr><td>MRB66599</td><td>1.980.000€</td><td>4%</td><td>6</td><td>92</td><td><span class="badge b-green">100%</span></td></tr>
+          </tbody></table></div>
+      <div class="card"><p class="card-eyebrow">Antigüedad</p><p class="card-title">+360 días en mercado</p><div style="position:relative;height:140px;"><canvas id="jl-oldChart"></canvas></div></div>
+    </div>
+  </div>
+
+
+  <div class="grid-2" style="margin-bottom:16px;margin-top:16px;">
+    <div class="card">
+      <p class="card-eyebrow">Distribución geográfica</p>
+      <p class="card-title">Properties per Zone</p>
+      <div style="margin-top:8px;">
+        <div class="zone-row"><span class="zone-name">Nueva Andalucía</span><div class="zone-bar-bg"><div class="zone-bar" style="width:100%;"></div></div><span class="zone-num">77</span></div>
+        <div class="zone-row"><span class="zone-name">East Marbella</span><div class="zone-bar-bg"><div class="zone-bar" style="width:79%;"></div></div><span class="zone-num">61</span></div>
+        <div class="zone-row"><span class="zone-name">Benahavís</span><div class="zone-bar-bg"><div class="zone-bar" style="width:36%;"></div></div><span class="zone-num">28</span></div>
+        <div class="zone-row"><span class="zone-name">Golden Mile</span><div class="zone-bar-bg"><div class="zone-bar" style="width:22%;"></div></div><span class="zone-num">17</span></div>
+        <div class="zone-row"><span class="zone-name">Sotogrande</span><div class="zone-bar-bg"><div class="zone-bar" style="width:22%;"></div></div><span class="zone-num">17</span></div>
+        <div class="zone-row"><span class="zone-name">Mijas</span><div class="zone-bar-bg"><div class="zone-bar" style="width:16%;"></div></div><span class="zone-num">12</span></div>
+        <div class="zone-row"><span class="zone-name">Nagüeles</span><div class="zone-bar-bg"><div class="zone-bar" style="width:6.5%;"></div></div><span class="zone-num">5</span></div>
+        <div class="zone-row"><span class="zone-name">Puerto Banús</span><div class="zone-bar-bg"><div class="zone-bar" style="width:6.5%;"></div></div><span class="zone-num">5</span></div>
+        <div class="zone-row"><span class="zone-name">San Pedro de Alcántara</span><div class="zone-bar-bg"><div class="zone-bar" style="width:6.5%;"></div></div><span class="zone-num">5</span></div>
+        <div class="zone-row"><span class="zone-name">Guadalmina</span><div class="zone-bar-bg"><div class="zone-bar" style="width:4%;"></div></div><span class="zone-num">3</span></div>
+        <div class="zone-row" style="margin-bottom:0;"><span class="zone-name">La Quinta</span><div class="zone-bar-bg"><div class="zone-bar" style="width:4%;"></div></div><span class="zone-num">3</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-eyebrow">Embudo de conversión</p>
+      <p class="card-title">Funnel de cartera</p>
+      <div class="funnel-wrap">
+        <div class="funnel-step fs1"><span class="funnel-label">Available</span><span class="funnel-val">243</span></div>
+        <div class="funnel-step fs2"><span class="funnel-label">Live<span class="funnel-pct">76.1%</span></span><span class="funnel-val">185</span></div>
+        <div class="funnel-step fs3"><span class="funnel-label">Con Viewings<span class="funnel-pct">30.8%</span></span><span class="funnel-val">57</span></div>
+        <div class="funnel-step fs4"><span class="funnel-label">Con Ofertas<span class="funnel-pct">2.2%</span></span><span class="funnel-val">4</span></div>
+      </div>
+      <p style="font-size:9px;color:var(--soft);font-style:italic;margin-top:14px;">De 243 propiedades disponibles, 185 están live, 57 han generado visitas y 4 tienen oferta sobre la mesa.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:16px;">
+    <p class="card-eyebrow">Pipeline comercial</p>
+    <p class="card-title">Detalle de ofertas · 4 activas</p>
+    <table class="data-table">
+      <thead><tr><th>Cliente</th><th>Referencia</th><th>Tipo</th><th>Precio oferta</th><th>% Com.</th><th>Comisión</th><th>Cierre est.</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#1A1A1A;">Charles Brook</td><td>MRB66007</td><td>Resale</td><td>1.000.000€</td><td>2.5%</td><td>17.500€</td><td>30/06/2026</td><td><span class="offer-stage os-completed">Completed</span></td></tr>
+        <tr><td style="color:#1A1A1A;">Teresa</td><td>MRB70149</td><td>Resale</td><td>435.000€</td><td>2.5%</td><td>10.875€</td><td>23/09/2026</td><td><span class="offer-stage os-accepted">Accepted</span></td></tr>
+        <tr><td style="color:#1A1A1A;">Farid-Al Safi</td><td>MRB68151</td><td>Obra Nueva</td><td>385.600€</td><td>5%</td><td>9.640€</td><td>19/08/2026</td><td><span class="offer-stage os-arras">Arras</span></td></tr>
+        <tr><td style="color:#1A1A1A;">Dagmar Edmondson</td><td>MRB68006</td><td>Obra Nueva</td><td>530.000€</td><td>5%</td><td>23.850€</td><td>26/05/2026</td><td><span class="offer-stage os-new">New</span></td></tr>
+        <tr style="border-top:1px solid #1A1A1A;"><td style="font-weight:600;color:#1A1A1A;">Total · 4 ofertas</td><td></td><td></td><td style="font-family:'EB Garamond',serif;font-size:15px;color:#1A1A1A;">2.350.600€</td><td></td><td style="font-family:'EB Garamond',serif;font-size:15px;color:#E73838;">61.865€</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EVOLUTION SUMMARY -->
+  <div class="evo-block">
+    <p class="evo-eyebrow">Comparativa</p>
+    <p class="evo-title">Evolución respecto al report de Abril</p>
+    <div class="evo-grid">
+      <div class="evo-metric"><p class="evo-metric-label">Meta Score medio</p><div class="evo-metric-vals"><span class="evo-from">51.4%</span><span class="evo-arrow">→</span><span class="evo-to">57.4%</span><span class="evo-delta evo-up">+6.0pp</span></div></div>
+      <div class="evo-metric"><p class="evo-metric-label">Propiedades verde (+80%)</p><div class="evo-metric-vals"><span class="evo-from">53</span><span class="evo-arrow">→</span><span class="evo-to">73</span><span class="evo-delta evo-up">+20</span></div></div>
+      <div class="evo-metric"><p class="evo-metric-label">Con leads activos</p><div class="evo-metric-vals"><span class="evo-from">44</span><span class="evo-arrow">→</span><span class="evo-to">49</span><span class="evo-delta evo-up">+5</span></div></div>
+      <div class="evo-metric"><p class="evo-metric-label">Valor cartera live</p><div class="evo-metric-vals"><span class="evo-from">430M€</span><span class="evo-arrow">→</span><span class="evo-to">497M€</span><span class="evo-delta evo-up">+67M€</span></div></div>
+    </div>
+    <div class="evo-narrative">
+      <p><strong>El Meta Score medio sube 6 puntos</strong> (51.4% → 57.4%), con 20 propiedades más entrando en verde (+80%). El trabajo de optimización de fichas y depuración de cartera está dando resultado, aunque seguimos por debajo del objetivo del 80%.</p>
+      <p><strong>La cartera crece en valor</strong> (+67M€) por la incorporación de nuevo producto de mayor ticket, reflejado en el salto de propiedades sobre 2.5M€. En paralelo, las propiedades con leads suben de 44 a 49, señal de mayor actividad comercial.</p>
+      <p><strong>El reto persiste en las 133 propiedades sin leads</strong> (14.9M€ de comisión dormida), donde se concentra el foco de las acciones de captación de comprador de los próximos meses.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="view" id="julio-leads">
+  <div style="margin-bottom:28px;"><p class="section-eyebrow">Performance</p><h2 class="section-title">Análisis de Leads | Julio 2026</h2><hr class="section-rule"></div>
+  <div class="kpi-grid" style="margin-bottom:28px;">
+    <div class="kpi kpi-accent"><p class="kpi-eyebrow">Total leads 2026</p><p class="kpi-val">302</p><p class="kpi-sub">acumulado hasta 1 julio</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Canal principal</p><p class="kpi-val">LF Web</p><p class="kpi-sub">67.22% de leads</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Mejor mes</p><p class="kpi-val">Marzo</p><p class="kpi-sub">95 enquiries</p></div>
+    <div class="kpi"><p class="kpi-eyebrow">Leads de Paid</p><p class="kpi-val">65.0%</p><p class="kpi-sub">del canal LF Website</p></div>
+  </div>
+  <div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Evolución mensual</p><p class="card-title">Enquiries por mes · 2026</p>
+    <div style="position:relative;height:280px;"><canvas id="jl-monthlyChart"></canvas></div>
+    <p style="font-size:9px;color:#8A8A8A;margin-top:12px;font-style:italic;">Fuente: Power BI Marbella · 1 julio 2026</p></div>
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card"><p class="card-eyebrow">Distribución de canal</p><p class="card-title">Group Marketing Path</p>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="position:relative;height:200px;flex:0 0 200px;"><canvas id="jl-groupChart"></canvas></div>
+        <div style="flex:1;">
+          <div style="margin-bottom:12px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#5A8A7A;"></span><span style="font-size:11px;font-weight:600;">LF Website</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>203 leads</span><span>67.22%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#5A8A7A;width:67.22%;"></div></div></div>
+          <div style="margin-bottom:12px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#1A3028;"></span><span style="font-size:11px;font-weight:600;">National Portal</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>59 leads</span><span>19.54%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#1A3028;width:19.54%;"></div></div></div>
+          <div style="margin-bottom:12px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#8A8A8A;"></span><span style="font-size:11px;font-weight:600;">International Portal</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>24 leads</span><span>7.95%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#8A8A8A;width:7.95%;"></div></div></div>
+          <div><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#C8C4BC;"></span><span style="font-size:11px;font-weight:600;">Offline</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>16 leads</span><span>5.3%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#C8C4BC;width:5.3%;"></div></div></div>
+        </div>
+      </div>
+      <p style="font-size:9px;color:#8A8A8A;margin-top:14px;font-style:italic;">Fuente: Power BI Marbella · 1 julio 2026</p></div>
+    <div class="card"><p class="card-eyebrow">LF Website · desglose</p><p class="card-title">Marketing Path</p>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="position:relative;height:200px;flex:0 0 200px;"><canvas id="jl-mktChart"></canvas></div>
+        <div style="flex:1;">
+          <div style="margin-bottom:12px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#5A8A7A;"></span><span style="font-size:11px;font-weight:600;">Paid</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>132 leads</span><span>65.02%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#5A8A7A;width:65.02%;"></div></div></div>
+          <div style="margin-bottom:12px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#8AAAD4;"></span><span style="font-size:11px;font-weight:600;">Organic & Direct</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>57 leads</span><span>28.08%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#8AAAD4;width:28.08%;"></div></div></div>
+          <div><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><span style="width:10px;height:10px;background:#1A1A1A;"></span><span style="font-size:11px;font-weight:600;">Email</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A8A8A;"><span>14 leads</span><span>6.9%</span></div><div style="height:3px;background:#E8E6E2;margin-top:4px;"><div style="height:3px;background:#1A1A1A;width:6.9%;"></div></div></div>
+          <div class="note-block" style="margin-top:16px;">El paid ha pasado a ser el motor principal del canal web (65%), un giro claro respecto a abril donde dominaba el orgánico (69%). La inversión en campañas está funcionando.</div>
+        </div>
+      </div>
+      <p style="font-size:9px;color:#8A8A8A;margin-top:14px;font-style:italic;">Fuente: Power BI Marbella · 1 julio 2026</p></div>
+  </div>
+  <div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Paid Media · desglose</p><p class="card-title">Leads por campaña digital</p>
+    <table class="data-table" id="campaign-table"><thead><tr><th>Campaña</th><th>Canal</th><th>Leads</th><th>% sobre paid</th><th>Periodo</th><th>Estado</th></tr></thead>
+      <tbody id="campaign-tbody"><tr class="campaign-placeholder"><td colspan="6" style="text-align:center;padding:28px;color:#8A8A8A;font-style:italic;font-size:11px;">— Añade aquí los datos de campañas cuando los tengas disponibles —</td></tr></tbody></table>
+    <div style="margin-top:16px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;gap:4px;"><label style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A8A;">Campaña</label><input id="c-name" type="text" placeholder="Ej: Banner Off-Market" style="padding:7px 10px;border:0.5px solid #D4D4D4;font-size:11px;font-family:inherit;width:200px;background:#FAFAF8;color:#1A1A1A;outline:none;"></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><label style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A8A;">Canal</label><select id="c-canal" style="padding:7px 10px;border:0.5px solid #D4D4D4;font-size:11px;font-family:inherit;background:#FAFAF8;color:#1A1A1A;outline:none;width:120px;"><option>Google Ads</option><option>Meta Ads</option><option>LinkedIn Ads</option><option>Email</option><option>Otro</option></select></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><label style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A8A;">Leads</label><input id="c-leads" type="number" placeholder="0" style="padding:7px 10px;border:0.5px solid #D4D4D4;font-size:11px;font-family:inherit;width:70px;background:#FAFAF8;color:#1A1A1A;outline:none;"></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><label style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A8A;">Periodo</label><input id="c-periodo" type="text" placeholder="Julio 2026" style="padding:7px 10px;border:0.5px solid #D4D4D4;font-size:11px;font-family:inherit;width:110px;background:#FAFAF8;color:#1A1A1A;outline:none;"></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><label style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A8A;">Estado</label><select id="c-estado" style="padding:7px 10px;border:0.5px solid #D4D4D4;font-size:11px;font-family:inherit;background:#FAFAF8;color:#1A1A1A;outline:none;width:110px;"><option>Activa</option><option>Pausada</option><option>Finalizada</option></select></div>
+      <button onclick="addCampaign()" style="padding:7px 18px;background:#E73838;color:#FFFFFF;border:none;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;height:32px;">+ Añadir</button>
+    </div>
+    <p style="font-size:9px;color:#8A8A8A;margin-top:10px;font-style:italic;">Datos guardados en esta sesión. Actualiza el archivo mensualmente con los datos de Ander / Daniel.</p></div>
+</div>
+
+
+<div class="view" id="julio-acciones">
   <div style="margin-bottom:16px;"><p class="section-eyebrow">Performance Paid Media</p><h2 class="section-title" style="font-size:22px;">Resumen de campañas · Mayo-Junio</h2><hr class="section-rule" style="margin-bottom:20px;"></div>
 
-  <!-- PAID KPIS -->
   <p class="section-eyebrow" style="margin-bottom:14px;">Google Ads · Captación</p>
   <div class="kpi-grid">
     <div class="kpi kpi-accent"><p class="kpi-eyebrow">Conversiones</p><p class="kpi-val">27</p><p class="kpi-sub">leads generados</p></div>
@@ -300,34 +522,28 @@
 
   <div style="margin-bottom:16px;margin-top:32px;"><p class="section-eyebrow">Plan de acción</p><h2 class="section-title" style="font-size:22px;">Acciones realizadas</h2><hr class="section-rule" style="margin-bottom:20px;"></div>
 
-  <div class="k-legend">
-    <span class="kl-item"><span class="kl-dot" style="background:#2A6E20;"></span>Acciones realizadas</span>
-  </div>
-
-  <!-- KRISTINA VIEWS OPTIMIZATION HIGHLIGHT -->
   <div class="alert-block" style="border-left-color:#2A6E20;margin-bottom:24px;">
     <p class="alert-eyebrow" style="color:#2A6E20;">Caso destacado · Kristina Views</p>
     <p style="font-size:13px;color:var(--ink);font-weight:600;margin-bottom:12px;">Trabajo de optimización integral sobre la obra nueva de Estepona</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">✓</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Vídeo de renders</strong> incorporado en campañas, con impacto directo en el rendimiento</span></div>
-      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">✓</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Optimización de paid</strong> para mejorar la calidad del tráfico entrante</span></div>
-      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">✓</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Vídeo en la landing</strong> para reforzar el contenido de la ficha</span></div>
-      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">✓</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Mayor inversión en Idealista</strong> para ganar visibilidad en el portal</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">&#10003;</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Vídeo de renders</strong> incorporado en campañas, con impacto directo en el rendimiento</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">&#10003;</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Optimización de paid</strong> para mejorar la calidad del tráfico entrante</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">&#10003;</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Vídeo en la landing</strong> para reforzar el contenido de la ficha</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:#2A6E20;font-size:14px;line-height:1.3;">&#10003;</span><span style="font-size:11px;color:var(--mid);line-height:1.5;"><strong style="color:var(--ink);">Mayor inversión en Idealista</strong> para ganar visibilidad en el portal</span></div>
     </div>
   </div>
 
   <div class="board" style="margin-bottom:32px;">
-    <div class="col col-done" style="width:100%;"><div class="col-head"><span class="col-name">Acciones realizadas</span><span class="col-cnt">10</span></div>
-      <div class="col-body" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+    <div class="col col-done" style="width:100%;"><div class="col-head"><span class="col-name">Acciones realizadas</span><span class="col-cnt">9</span></div>
+      <div class="col-body" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
         <div class="k-card"><p class="k-title">Kristina Views · optimización integral</p><p class="k-meta">Renders, paid, landing e Idealista</p><div class="k-tags"><span class="k-tag kt-paid">Paid</span><span class="k-tag kt-portal">Portales</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span><span class="k-owner ow-ch">CH</span></div><span class="k-pri p-alta">Destacado</span></div></div>
-        <div class="k-card"><p class="k-title">Google Ads · Captación ND + Resale</p><p class="k-meta">27 conversiones · 5.191€ invertido</p><div class="k-tags"><span class="k-tag kt-paid">Paid Media</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
-        <div class="k-card"><p class="k-title">Meta Ads · Kristina Views + Resale</p><p class="k-meta">27 resultados · 1.862€ invertido</p><div class="k-tags"><span class="k-tag kt-paid">Paid Media</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
+        <div class="k-card"><p class="k-title">Google Ads · Captación ND + Resale</p><p class="k-meta">27 conversiones · 5.191€</p><div class="k-tags"><span class="k-tag kt-paid">Paid Media</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
+        <div class="k-card"><p class="k-title">Meta Ads · Kristina Views + Resale</p><p class="k-meta">27 resultados · 1.862€</p><div class="k-tags"><span class="k-tag kt-paid">Paid Media</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
         <div class="k-card"><p class="k-title">Newsletters Featured Properties</p><p class="k-meta">Mayo + Junio · ~2.500 envíos</p><div class="k-tags"><span class="k-tag kt-email">Email Marketing</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ch">CH</span></div></div></div>
         <div class="k-card"><p class="k-title">Newsletter MRB_Buyer MRB66599</p><p class="k-meta">Buyer específico</p><div class="k-tags"><span class="k-tag kt-email">Email</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ch">CH</span></div></div></div>
         <div class="k-card"><p class="k-title">Blog editorial · serie posicionamiento</p><p class="k-meta">4 artículos mayo-junio</p><div class="k-tags"><span class="k-tag kt-prensa">Blog</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ar">AR</span></div></div></div>
         <div class="k-card"><p class="k-title">Portales internacionales · 44 acciones</p><p class="k-meta">Luxury Estate, ThinkSpain</p><div class="k-tags"><span class="k-tag kt-portal">Portales</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ch">CH</span></div></div></div>
         <div class="k-card"><p class="k-title">Leads Meta → registro en CRM</p><p class="k-meta">Trazabilidad garantizada</p><div class="k-tags"><span class="k-tag kt-crm">CRM</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
-        <div class="k-card"><p class="k-title">Análisis caída calidad leads abril</p><p class="k-meta">Base para optimización paid</p><div class="k-tags"><span class="k-tag kt-paid">Paid</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ad">AD</span></div></div></div>
         <div class="k-card"><p class="k-title">Andalucía Real Estate Forum</p><p class="k-meta">21 mayo</p><div class="k-tags"><span class="k-tag kt-offline">Offline</span></div><div class="k-footer"><div class="k-owners"><span class="k-owner ow-ar">AR</span></div></div></div>
       </div>
     </div>
@@ -397,14 +613,11 @@
 </div>
 </main>
 </div>
-
-<script>
-function switchReport(rep, e) {
+<script>function switchReport(rep, e) {
   document.querySelectorAll('.report-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.report').forEach(r => r.classList.remove('active'));
   e.target.classList.add('active');
   document.getElementById('report-' + rep).classList.add('active');
-  // reset to cartera tab
   document.querySelectorAll('#report-'+rep+' .nav-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('#report-'+rep+' .view').forEach(v => v.classList.remove('active'));
   document.querySelector('#report-'+rep+' .nav-tab').classList.add('active');
@@ -422,58 +635,51 @@ function switchTab(rep, tab, e) {
   if (rep==='julio' && tab==='leads') renderJulioLeads();
   if (rep==='julio' && tab==='acciones') renderJulioAcciones();
 }
-Chart.defaults.font.family = "'Nunito Sans', sans-serif";
 const opts = { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}} };
 function axisOpts(){ return { x:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{display:false},border:{display:false}}, y:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{color:'#E8E6E2'},border:{display:false}} }; }
 
-// ── JULIO CARTERA ──
 let jlCarteraDone=false;
 function renderJulioCartera(){
-  if(jlCarteraDone) return; jlCarteraDone=true;
+  if(jlCarteraDone||typeof Chart==='undefined') return; jlCarteraDone=true;
   new Chart(document.getElementById('jl-metaChart'),{type:'doughnut',data:{labels:['Verde','Amarillo','Rojo'],datasets:[{data:[73,27,82],backgroundColor:['#2A6E20','#B87820','#E73838'],borderWidth:0}]},options:{...opts,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} props.`}}}}});
   new Chart(document.getElementById('jl-precioChart'),{type:'doughnut',data:{labels:['< 1M','1M-2M','> 2M'],datasets:[{data:[42,70,70],backgroundColor:['#2A4A8A','#4A6AAA','#8AAAD4'],borderWidth:0}]},options:{...opts,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} props.`}}}}});
   new Chart(document.getElementById('jl-leadsBarChart'),{type:'bar',data:{labels:['MRB66691','MRB66238','MRB67266','EST62060','MRB66599'],datasets:[{data:[15,12,9,7,6],backgroundColor:['#2A6E20','#E73838','#B87820','#2A6E20','#2A6E20'],borderWidth:0,borderRadius:2}]},options:{...opts,scales:axisOpts()}});
-  new Chart(document.getElementById('jl-oldChart'),{type:'bar',indexAxis:'y',data:{labels:['MRB34927','MRB39094','MRB43250','EST56441','EST56442'],datasets:[{data:[1323,1259,1091,520,520],backgroundColor:'rgba(231,56,56,0.35)',borderWidth:0,borderRadius:2}]},options:{...opts,scales:{x:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{color:'#E8E6E2'},border:{display:false}},y:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{display:false},border:{display:false}}}});
+  new Chart(document.getElementById('jl-oldChart'),{type:'bar',indexAxis:'y',data:{labels:['MRB34927','MRB39094','MRB43250','EST56441','EST56442'],datasets:[{data:[1323,1259,1091,520,520],backgroundColor:'rgba(231,56,56,0.35)',borderWidth:0,borderRadius:2}]},options:{...opts,scales:{x:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{color:'#E8E6E2'},border:{display:false}},y:{ticks:{color:'#8A8A8A',font:{size:10}},grid:{display:false},border:{display:false}}}}});
 }
-// ── JULIO LEADS ──
 let jlLeadsDone=false;
 function renderJulioLeads(){
-  if(jlLeadsDone) return; jlLeadsDone=true;
+  if(jlLeadsDone||typeof Chart==='undefined') return; jlLeadsDone=true;
   renderCampaignTable();
   new Chart(document.getElementById('jl-monthlyChart'),{type:'bar',data:{labels:['Ene','Feb','Mar','Abr','May','Jun','Jul'],datasets:[{label:'Enquiries 2026',data:[3,8,95,74,75,47,2],backgroundColor:'#E73838',borderWidth:0,borderRadius:3}]},options:{...opts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} enquiries`}}},scales:axisOpts()}});
   new Chart(document.getElementById('jl-groupChart'),{type:'doughnut',data:{labels:['LF Website','National Portal','International Portal','Offline'],datasets:[{data:[203,59,24,16],backgroundColor:['#5A8A7A','#1A3028','#8A8A8A','#C8C4BC'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} leads`}}}}});
   new Chart(document.getElementById('jl-mktChart'),{type:'doughnut',data:{labels:['Paid','Organic & Direct','Email'],datasets:[{data:[132,57,14],backgroundColor:['#5A8A7A','#8AAAD4','#1A1A1A'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} leads`}}}}});
 }
-// ── ABRIL CHARTS ──
+let jlAccionesDone=false;
+function renderJulioAcciones(){
+  if(jlAccionesDone||typeof Chart==='undefined') return; jlAccionesDone=true;
+  new Chart(document.getElementById('jl-googleChart'),{type:'bar',data:{labels:['ND / Kristina','Resale Buyers','Resale Sellers'],datasets:[{label:'Leads',data:[19,7,1],backgroundColor:['#E73838','#5A8A7A','#B87820'],borderWidth:0,borderRadius:2}]},options:{...opts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} leads`}}},scales:axisOpts()}});
+}
 let abCarteraDone=false;
 function renderAbrilCharts(){
-  if(abCarteraDone) return; abCarteraDone=true;
+  if(abCarteraDone||typeof Chart==='undefined') return; abCarteraDone=true;
   new Chart(document.getElementById('ab-metaChart'),{type:'doughnut',data:{labels:['Verde','Amarillo','Rojo'],datasets:[{data:[53,30,99],backgroundColor:['#2A6E20','#B87820','#E73838'],borderWidth:0}]},options:{...opts,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} props.`}}}}});
 }
 let abLeadsDone=false;
 function renderAbrilLeads(){
-  if(abLeadsDone) return; abLeadsDone=true;
+  if(abLeadsDone||typeof Chart==='undefined') return; abLeadsDone=true;
   new Chart(document.getElementById('ab-monthlyChart'),{type:'bar',data:{labels:['Ene','Feb','Mar','Abr'],datasets:[{label:'Enquiries 2026',data:[29,26,93,58],backgroundColor:'#E73838',borderWidth:0,borderRadius:3}]},options:{...opts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} enquiries`}}},scales:axisOpts()}});
   new Chart(document.getElementById('ab-groupChart'),{type:'doughnut',data:{labels:['LF Website','Offline','International','National'],datasets:[{data:[120,39,17,9],backgroundColor:['#5A8A7A','#C8C4BC','#8A8A8A','#1A3028'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} leads`}}}}});
   new Chart(document.getElementById('ab-mktChart'),{type:'doughnut',data:{labels:['Organic & Direct','Paid','Email'],datasets:[{data:[83,26,11],backgroundColor:['#8AAAD4','#5A8A7A','#1A1A1A'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} leads`}}}}});
 }
-let jlAccionesDone=false;
-function renderJulioAcciones(){
-  if(jlAccionesDone) return; jlAccionesDone=true;
-  new Chart(document.getElementById('jl-googleChart'),{type:'bar',data:{labels:['ND / Kristina','Resale Buyers','Resale Sellers'],datasets:[{label:'Leads',data:[19,7,1],backgroundColor:['#E73838','#5A8A7A','#B87820'],borderWidth:0,borderRadius:2}]},options:{...opts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} leads`}}},scales:axisOpts()}});
-}
-// ── MARKETING ACTIONS ──
 function toggleProp(el){ el.parentElement.classList.toggle('open'); }
 function filterMA(){
-  const q=document.getElementById('ma-search').value.toUpperCase();
-  let visible=0;
+  const q=document.getElementById('ma-search').value.toUpperCase(); let visible=0;
   document.querySelectorAll('#ma-list .ma-prop').forEach(p=>{
     const ref=p.querySelector('.ma-ref').textContent.toUpperCase();
     if(ref.includes(q)){ p.style.display=''; visible++; } else { p.style.display='none'; }
   });
   document.getElementById('ma-count').textContent = visible+' propiedades';
 }
-// ── CAMPAIGNS ──
 let campaigns=[
   {name:'ND / Kristina Views (Search)',canal:'Google Ads',leads:19,periodo:'May-Jun',estado:'Activa'},
   {name:'Resale Buyers (Search)',canal:'Google Ads',leads:7,periodo:'May-Jun',estado:'Activa'},
@@ -488,13 +694,12 @@ function addCampaign(){
   document.getElementById('c-name').value='';document.getElementById('c-leads').value='';document.getElementById('c-periodo').value='';
 }
 function renderCampaignTable(){
-  const tbody=document.getElementById('campaign-tbody');
-  if(campaigns.length===0){tbody.innerHTML='<tr class="campaign-placeholder"><td colspan="6" style="text-align:center;padding:28px;color:#8A8A8A;font-style:italic;font-size:11px;">— Añade aquí los datos de campañas cuando los tengas disponibles —</td></tr>';return;}
+  const tbody=document.getElementById('campaign-tbody'); if(!tbody) return;
+  if(campaigns.length===0){tbody.innerHTML='<tr class="campaign-placeholder"><td colspan="6" style="text-align:center;padding:28px;color:#8A8A8A;font-style:italic;font-size:11px;">— Sin datos —</td></tr>';return;}
   const total=campaigns.reduce((s,c)=>s+c.leads,0);const eC={'Activa':'#2A6E20','Pausada':'#8A5A10','Finalizada':'#4A4A4A'};const eB={'Activa':'#E6F4EE','Pausada':'#FBF3E6','Finalizada':'#F0EFEC'};
   tbody.innerHTML=campaigns.map(c=>{const pct=total>0?((c.leads/total)*100).toFixed(1):0;return `<tr><td style="color:#1A1A1A;">${c.name}</td><td><span style="font-size:9px;font-weight:700;padding:2px 6px;background:#EEEDFB;color:#3C3489;letter-spacing:0.06em;text-transform:uppercase;">${c.canal}</span></td><td style="font-family:'EB Garamond',serif;font-size:16px;color:#1A1A1A;">${c.leads}</td><td><div style="display:flex;align-items:center;gap:8px;"><div style="flex:1;height:3px;background:#E8E6E2;"><div style="height:3px;background:#E73838;width:${pct}%;"></div></div><span style="font-size:10px;color:#8A8A8A;min-width:36px;">${pct}%</span></div></td><td style="color:#8A8A8A;font-size:10px;">${c.periodo}</td><td><span style="font-size:9px;font-weight:700;padding:2px 6px;background:${eB[c.estado]};color:${eC[c.estado]};letter-spacing:0.06em;text-transform:uppercase;">${c.estado}</span></td></tr>`;}).join('')+`<tr style="border-top:1px solid #1A1A1A;"><td style="font-weight:600;color:#1A1A1A;">Total</td><td></td><td style="font-family:'EB Garamond',serif;font-size:18px;color:#E73838;">${total}</td><td></td><td></td><td></td></tr>`;
 }
-// initial render
-renderJulioCartera();
+window.addEventListener('load', function(){ renderJulioCartera(); });
 </script>
 </body>
 </html>
