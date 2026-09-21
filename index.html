@@ -692,29 +692,29 @@ const REPORTS = [
   },
 
   acciones: {
-    pendiente: 'Pendiente el listado de acciones del periodo y los datos de Meta Ads.',
+    pendiente: 'Cobertura calculada con las columnas de acciones del export de cartera, que solo traen el recuento por propiedad. Pendiente el listado detallado de acciones del periodo y los datos de Meta Ads.',
     paid: {
-      titulo: 'Google Ads · 1 mayo a 21 septiembre',
+      titulo: 'Google Ads · 1 julio a 21 septiembre',
       google: {
         titulo: 'Google Ads · Captación',
         kpis: [
-          { eyebrow:'Inversión', val:'12.628€', sub:'1 may - 21 sep', accent:true },
-          { eyebrow:'Leads', val:'66.1', sub:'conversiones atribuidas' },
-          { eyebrow:'CPL medio', val:'191€', sub:'coste por lead' },
-          { eyebrow:'CTR', val:'5.19%', sub:'click-through rate' }
+          { eyebrow:'Inversión', val:'8.516€', sub:'1 jul - 21 sep', accent:true },
+          { eyebrow:'Leads', val:'40.1', sub:'conversiones atribuidas' },
+          { eyebrow:'CPL medio', val:'213€', sub:'coste por lead' },
+          { eyebrow:'CTR', val:'4.98%', sub:'click-through rate' }
         ],
         kpis2: [
-          { eyebrow:'Impresiones', val:'284.821', sub:'alcance total' },
-          { eyebrow:'Clics', val:'14.780', sub:'tráfico generado' },
-          { eyebrow:'CPC medio', val:'0.85€', sub:'coste por clic' }
+          { eyebrow:'Impresiones', val:'208.878', sub:'alcance total' },
+          { eyebrow:'Clics', val:'10.408', sub:'tráfico generado' },
+          { eyebrow:'CPC medio', val:'0.82€', sub:'coste por clic' }
         ],
         chartTitulo: 'Leads por objetivo de campaña',
         chart: {
           labels:['Obra Nueva', 'Resale Buyers', 'Resale Sellers', 'Branding'],
-          data:[43.3, 21.8, 1, 0],
+          data:[24.8, 15.3, 0, 0],
           colores:['#E73838','#5A8A7A','#B87820','#8A8A8A']
         },
-        nota: 'La obra nueva se lleva el 48% de la inversión y genera el 66% de los leads. Resale sellers y branding suman 1.069€ y un solo lead entre los dos.'
+        nota: 'La obra nueva se lleva el 48% de la inversión y genera el 62% de los leads. Resale sellers y branding suman 625€ y ni un solo lead en todo el trimestre.'
       },
       tablas: [
         {
@@ -723,15 +723,15 @@ const REPORTS = [
           headers: ['Campaña', 'Inversión', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
           destacar: 5,
           filas: [
-            ['ND Search Captación MULT', '2.847€', '56.234', '2.621', '4.66%', '28.7', '99€'],
-            ['ND Search Captación ES', '3.225€', '77.172', '3.552', '4.60%', '14.6', '221€'],
-            ['Resale Buyers Captación ES', '3.139€', '81.863', '5.088', '6.22%', '11.8', '267€'],
-            ['Resale Buyers Captación MULT', '2.348€', '54.664', '2.738', '5.01%', '10.0', '235€'],
-            ['Resale Sellers Captación ES', '865€', '13.010', '610', '4.69%', '1.0', '865€'],
-            ['Branding ES', '204€', '1.878', '171', '9.11%', '0', 'n/d']
+            ['ND Search Captación MULT', '2.056€', '42.107', '1.924', '4.57%', '19.2', '107€'],
+            ['ND Search Captación ES', '2.066€', '59.391', '2.651', '4.46%', '5.6', '369€'],
+            ['Resale Buyers Captación ES', '1.948€', '55.085', '3.288', '5.97%', '6.3', '311€'],
+            ['Resale Buyers Captación MULT', '1.821€', '41.946', '2.006', '4.78%', '9.0', '202€'],
+            ['Resale Sellers Captación ES', '421€', '8.469', '368', '4.35%', '0', 'n/d'],
+            ['Branding ES', '204€', '1.880', '171', '9.10%', '0', 'n/d']
           ],
-          total: ['Total · 6 campañas', '12.628€', '284.821', '14.780', '5.19%', '66.1', '191€'],
-          nota: 'Kristina Views concentra 4.091€ de inversión (32% del total) y 27.8 leads (42% del total), con un CPL de 147€. Sigue siendo el producto que mejor responde en paid.'
+          total: ['Total · 6 campañas', '8.516€', '208.878', '10.408', '4.98%', '40.1', '213€'],
+          nota: 'Kristina Views concentra 3.015€ de inversión (35% del total) y 16.8 leads (42% del total), con un CPL de 180€. Sigue siendo el producto que mejor responde en paid.'
         },
         {
           eyebrow: 'Eficiencia',
@@ -739,16 +739,74 @@ const REPORTS = [
           headers: ['Idioma', 'Inversión', '% inversión', 'Leads', '% leads', 'CPL'],
           destacar: 5,
           filas: [
-            ['Inglés', '4.553€', '36.0%', '31.7', '48.0%', '144€'],
-            ['Español', '7.433€', '58.9%', '27.4', '41.4%', '272€'],
-            ['Polaco', '485€', '3.8%', '5.0', '7.6%', '97€'],
-            ['Neerlandés', '158€', '1.3%', '2.0', '3.0%', '79€']
+            ['Inglés', '3.443€', '40.4%', '25.2', '62.9%', '137€'],
+            ['Español', '4.639€', '54.5%', '11.9', '29.6%', '391€'],
+            ['Neerlandés', '119€', '1.4%', '2.0', '5.0%', '59€'],
+            ['Polaco', '315€', '3.7%', '1.0', '2.5%', '315€']
           ],
-          total: ['Total', '12.628€', '100%', '66.1', '100%', '191€'],
-          nota: 'El español se lleva el 59% del presupuesto y solo devuelve el 41% de los leads, con un CPL de 272€ frente a los 144€ del inglés. Polaco y neerlandés son marginales en inversión pero los más eficientes del mix.'
+          total: ['Total', '8.516€', '100%', '40.1', '100%', '213€'],
+          nota: 'El desequilibrio es la lectura del trimestre: el español se lleva el 54.5% del presupuesto y devuelve el 29.6% de los leads, con un CPL de 391€ frente a los 137€ del inglés. En mayo y junio el reparto estaba mucho más sano (26 leads por 4.113€, CPL de 158€), así que el encarecimiento es reciente.'
         }
       ]
-    }
+    },
+    secciones: [
+      {
+        eyebrow: 'Detalle operativo',
+        titulo: 'Cobertura de acciones de marketing',
+        kpis: [
+          { eyebrow:'Propiedades con acciones', val:'71', sub:'de 244 live · 29%' },
+          { eyebrow:'Sin ninguna acción', val:'173', sub:'71% de la cartera live', accent:true },
+          { eyebrow:'Acciones completadas', val:'203', sub:'histórico acumulado' },
+          { eyebrow:'Acciones activas', val:'23', sub:'en curso ahora' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Cruce',
+            titulo: 'Acciones de marketing frente a leads',
+            headers: ['Grupo', 'Propiedades', 'Lectura'],
+            destacar: 1,
+            filas: [
+              ['Con acciones y con leads', '35', 'Funcionando'],
+              ['Con acciones y sin leads', '36', 'Revisar ficha, precio o canal'],
+              ['Sin acciones y con leads', '57', 'Traccionan solas, hay margen'],
+              ['Sin acciones y sin leads', '116', 'Punto ciego de la cartera']
+            ],
+            total: ['Total live', '244', ''],
+            nota: 'Las 116 propiedades que no tienen ni una acción de marketing ni un solo lead suman 382.6M€ de valor de cartera. Es el bloque donde más rápido se puede mover la aguja.'
+          },
+          {
+            eyebrow: 'Prioridad',
+            titulo: 'Fichas de alto valor sin acciones ni leads',
+            headers: ['Referencia', 'Precio', 'Meta Score', 'Acciones', 'Leads'],
+            destacar: 1,
+            filas: [
+              ['MRB72298', '19.500.000€', '98%', '0', '0'],
+              ['MRB72272', '14.900.000€', '98%', '0', '0'],
+              ['MRB72265', '13.500.000€', '98%', '0', '0'],
+              ['MRB72103', '10.850.000€', '98%', '0', '0'],
+              ['MRB72287', '10.500.000€', '98%', '0', '0'],
+              ['MRB70098', '9.995.000€', '100%', '0', '0']
+            ],
+            nota: 'Son fichas impecables, con Meta Score de 98% y 100%, y ninguna ha recibido una sola acción de marketing ni ha generado un lead. El trabajo de ficha está hecho, falta el de promoción.'
+          },
+          {
+            eyebrow: 'Ranking',
+            titulo: 'Propiedades con más acciones registradas',
+            headers: ['Referencia', 'Total acciones', 'Activas', 'Completadas', 'Leads'],
+            destacar: 1,
+            filas: [
+              ['MRB70204', '14', '1', '13', '1'],
+              ['MRB70173', '12', '1', '11', '0'],
+              ['MRB70209', '11', '1', '10', '2'],
+              ['MRB70199', '11', '1', '10', '1'],
+              ['Kristina Views', '10', '0', '10', '143'],
+              ['MRB66566', '8', '0', '8', '2']
+            ],
+            nota: 'Kristina Views convierte 10 acciones en 143 leads. Las otras cuatro fichas de la serie MRB70xxx acumulan 48 acciones entre ellas y suman 4 leads, así que conviene revisar qué se está haciendo ahí.'
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -821,6 +879,19 @@ function elKCard(c) {
   const pri = c.pri ? `<span class="k-pri ${c.pri.clase}">${esc(c.pri.l)}</span>` : '';
   const footer = (owners || pri) ? `<div class="k-footer"><div class="k-owners">${owners}</div>${pri}</div>` : '';
   return `<div class="k-card"><p class="k-title">${esc(c.t)}</p>${c.m ? `<p class="k-meta">${esc(c.m)}</p>` : ''}<div class="k-tags">${tags}</div>${footer}</div>`;
+}
+/* tabla generica: {eyebrow, titulo, headers, filas, total, nota, destacar} */
+function elTablaLibre(t) {
+  return `<div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">${esc(t.eyebrow)}</p><p class="card-title">${esc(t.titulo)}</p>
+    <table class="data-table">
+      <thead><tr>${t.headers.map(x => `<th>${esc(x)}</th>`).join('')}</tr></thead>
+      <tbody>${t.filas.map(f => `<tr>${f.map((celda, i) => {
+        const cls = i === 0 ? 'strong' : (t.destacar === i ? 'figure' : '');
+        return `<td${cls ? ` class="${cls}"` : ''}>${esc(celda)}</td>`;
+      }).join('')}</tr>`).join('')}
+      ${t.total ? `<tr class="total-row">${t.total.map((celda, i) => `<td class="${i === 0 ? 'label' : (t.destacar === i ? 'figure-red' : '')}">${esc(celda)}</td>`).join('')}</tr>` : ''}
+      </tbody></table>
+    ${t.nota ? `<div class="note-block" style="margin-top:16px;">${esc(t.nota)}</div>` : ''}</div>`;
 }
 function elEquipo() {
   return `<div class="team-legend">${OFICINA.equipo.map(p =>
@@ -1033,20 +1104,16 @@ function vistaAcciones(r) {
     h += m ? `<div class="grid-2" style="margin-bottom:16px;">${cardGoogle}${cardMeta}</div>`
            : `<div style="margin-bottom:16px;">${cardGoogle}</div>`;
 
-    /* tablas libres: cada una {eyebrow, titulo, headers, filas, total, nota, destacar} */
-    (a.paid.tablas || []).forEach(t => {
-      h += `<div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">${esc(t.eyebrow)}</p><p class="card-title">${esc(t.titulo)}</p>
-        <table class="data-table">
-          <thead><tr>${t.headers.map(x => `<th>${esc(x)}</th>`).join('')}</tr></thead>
-          <tbody>${t.filas.map(f => `<tr>${f.map((celda, i) => {
-            const cls = i === 0 ? 'strong' : (t.destacar === i ? 'figure' : '');
-            return `<td${cls ? ` class="${cls}"` : ''}>${esc(celda)}</td>`;
-          }).join('')}</tr>`).join('')}
-          ${t.total ? `<tr class="total-row">${t.total.map((celda, i) => `<td class="${i === 0 ? 'label' : (t.destacar === i ? 'figure-red' : '')}">${esc(celda)}</td>`).join('')}</tr>` : ''}
-          </tbody></table>
-        ${t.nota ? `<div class="note-block" style="margin-top:16px;">${esc(t.nota)}</div>` : ''}</div>`;
-    });
+    (a.paid.tablas || []).forEach(t => { h += elTablaLibre(t); });
   }
+
+  /* secciones libres: {eyebrow, titulo, kpis, tablas, nota} */
+  (a.secciones || []).forEach(s => {
+    h += elSectionHead(s.eyebrow, s.titulo, true);
+    if (s.kpis) h += elKpiGrid(s.kpis);
+    (s.tablas || []).forEach(t => { h += elTablaLibre(t); });
+    if (s.nota) h += `<div class="note-block" style="margin-bottom:16px;">${esc(s.nota)}</div>`;
+  });
 
   if (a.kanban) {
     h += elSectionHead('Plan de acción', 'Acciones de Marketing | ' + r.periodo);
