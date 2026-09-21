@@ -714,18 +714,18 @@ const REPORTS = [
           data:[24.8, 15.3, 0, 0],
           colores:['#E73838','#5A8A7A','#B87820','#8A8A8A']
         },
-        nota: 'La obra nueva se lleva el 48% de la inversión y genera el 62% de los leads. Resale sellers y branding suman 625€ y ni un solo lead en todo el trimestre.'
+        nota: 'La obra nueva se lleva casi la mitad de la inversión y genera el 62% de los leads. Resale sellers y branding no trajeron ni un solo lead en todo el trimestre.'
       },
       meta: {
         titulo: 'Rendimiento por conjunto de anuncios',
         filas: [
-          { name:'Propiedades Resale', res:0, resColor:'#4A4A4A', inv:'548€', imp:'67.038', ctr:'0.86%' },
-          { name:'Resale Sellers · MRB+MLG', res:1, resColor:'#2A6E20', inv:'277€', imp:'43.542', ctr:'0.77%' },
-          { name:'Vídeos Feed · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'277€', imp:'40.749', ctr:'0.52%' },
-          { name:'Branding · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'276€', imp:'36.842', ctr:'1.07%' },
-          { name:'Resale Buyers · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'276€', imp:'21.702', ctr:'2.63%' }
+          { name:'Propiedades Resale', res:0, resColor:'#4A4A4A', imp:'67.038', ctr:'0.86%' },
+          { name:'Resale Sellers · MRB+MLG', res:1, resColor:'#2A6E20', imp:'43.542', ctr:'0.77%' },
+          { name:'Vídeos Feed · MRB+MLG', res:0, resColor:'#4A4A4A', imp:'40.749', ctr:'0.52%' },
+          { name:'Branding · MRB+MLG', res:0, resColor:'#4A4A4A', imp:'36.842', ctr:'1.07%' },
+          { name:'Resale Buyers · MRB+MLG', res:0, resColor:'#4A4A4A', imp:'21.702', ctr:'2.63%' }
         ],
-        total: { res:1, inv:'1.655€', imp:'209.873', ctr:'0.99%' },
+        total: { res:1, imp:'209.873', ctr:'0.99%' },
         nota: 'Cuatro de los cinco conjuntos pertenecen a una campaña compartida entre Marbella y Málaga, así que ni esa inversión ni ese único lead son atribuibles solo a Marbella.'
       },
       tablas: [
@@ -744,32 +744,32 @@ const REPORTS = [
         {
           eyebrow: 'Detalle',
           titulo: 'Rendimiento por campaña',
-          headers: ['Campaña', 'Inversión', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
-          destacar: 5,
+          headers: ['Campaña', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
+          destacar: 4,
           filas: [
-            ['ND Search Captación MULT', '2.056€', '42.107', '1.924', '4.57%', '19.2', '107€'],
-            ['ND Search Captación ES', '2.066€', '59.391', '2.651', '4.46%', '5.6', '369€'],
-            ['Resale Buyers Captación ES', '1.948€', '55.085', '3.288', '5.97%', '6.3', '311€'],
-            ['Resale Buyers Captación MULT', '1.821€', '41.946', '2.006', '4.78%', '9.0', '202€'],
-            ['Resale Sellers Captación ES', '421€', '8.469', '368', '4.35%', '0', 'n/d'],
-            ['Branding ES', '204€', '1.880', '171', '9.10%', '0', 'n/d']
+            ['ND Search Captación MULT', '42.107', '1.924', '4.57%', '19.2', '107€'],
+            ['ND Search Captación ES', '59.391', '2.651', '4.46%', '5.6', '369€'],
+            ['Resale Buyers Captación ES', '55.085', '3.288', '5.97%', '6.3', '311€'],
+            ['Resale Buyers Captación MULT', '41.946', '2.006', '4.78%', '9.0', '202€'],
+            ['Resale Sellers Captación ES', '8.469', '368', '4.35%', '0', 'n/d'],
+            ['Branding ES', '1.880', '171', '9.10%', '0', 'n/d']
           ],
-          total: ['Total · 6 campañas', '8.516€', '208.878', '10.408', '4.98%', '40.1', '213€'],
-          nota: 'Kristina Views concentra 3.015€ de inversión (35% del total) y 16.8 leads (42% del total), con un CPL de 180€. Sigue siendo el producto que mejor responde en paid.'
+          total: ['Total · 6 campañas', '208.878', '10.408', '4.98%', '40.1', '213€'],
+          nota: 'Kristina Views concentra el 35% de la inversión y 16.8 leads, el 42% del total, con un CPL de 180€. Sigue siendo el producto que mejor responde en paid.'
         },
         {
           eyebrow: 'Eficiencia',
           titulo: 'Rendimiento por idioma',
-          headers: ['Idioma', 'Inversión', '% inversión', 'Leads', '% leads', 'CPL'],
-          destacar: 5,
+          headers: ['Idioma', '% inversión', 'Leads', '% leads', 'CPL'],
+          destacar: 4,
           filas: [
-            ['Inglés', '3.443€', '40.4%', '25.2', '62.9%', '137€'],
-            ['Español', '4.639€', '54.5%', '11.9', '29.6%', '391€'],
-            ['Neerlandés', '119€', '1.4%', '2.0', '5.0%', '59€'],
-            ['Polaco', '315€', '3.7%', '1.0', '2.5%', '315€']
+            ['Inglés', '40.4%', '25.2', '62.9%', '137€'],
+            ['Español', '54.5%', '11.9', '29.6%', '391€'],
+            ['Neerlandés', '1.4%', '2.0', '5.0%', '59€'],
+            ['Polaco', '3.7%', '1.0', '2.5%', '315€']
           ],
-          total: ['Total', '8.516€', '100%', '40.1', '100%', '213€'],
-          nota: 'El desequilibrio es la lectura del trimestre: el español se lleva el 54.5% del presupuesto y devuelve el 29.6% de los leads, con un CPL de 391€ frente a los 137€ del inglés. En mayo y junio el reparto estaba mucho más sano (26 leads por 4.113€, CPL de 158€), así que el encarecimiento es reciente.'
+          total: ['Total', '100%', '40.1', '100%', '213€'],
+          nota: 'El desequilibrio es la lectura del trimestre: el español se lleva el 54.5% del presupuesto y devuelve el 29.6% de los leads, con un CPL de 391€ frente a los 137€ del inglés. En mayo y junio el reparto estaba mucho más sano, con un CPL medio de 158€, así que el encarecimiento es reciente.'
         }
       ]
     },
@@ -1117,11 +1117,13 @@ function vistaAcciones(r) {
         <div style="position:relative;height:200px;"><canvas id="${id}-googleChart"></canvas></div>
         ${g.nota ? `<div class="note-block" style="margin-top:16px;">${esc(g.nota)}</div>` : ''}</div>`;
 
+    /* la columna de inversion solo sale si los datos la traen */
+    const mInv = m && m.filas.some(f => f.inv);
     const cardMeta = m ? `<div class="card"><p class="card-eyebrow">Meta Ads</p><p class="card-title">${esc(m.titulo)}</p>
         <table class="data-table" style="margin-top:8px;">
-          <thead><tr><th>Campaña</th><th>Resultados</th><th>Inversión</th><th>Impresiones</th><th>CTR</th></tr></thead>
-          <tbody>${m.filas.map(f => `<tr><td class="strong">${esc(f.name)}</td><td style="font-family:'EB Garamond',serif;font-size:16px;color:${f.resColor};">${f.res}</td><td>${esc(f.inv)}</td><td>${esc(f.imp)}</td><td>${esc(f.ctr)}</td></tr>`).join('')}
-          <tr class="total-row"><td class="label">Total</td><td class="figure-red">${m.total.res}</td><td>${esc(m.total.inv)}</td><td>${esc(m.total.imp)}</td><td>${esc(m.total.ctr)}</td></tr>
+          <thead><tr><th>Campaña</th><th>Resultados</th>${mInv ? '<th>Inversión</th>' : ''}<th>Impresiones</th><th>CTR</th></tr></thead>
+          <tbody>${m.filas.map(f => `<tr><td class="strong">${esc(f.name)}</td><td style="font-family:'EB Garamond',serif;font-size:16px;color:${f.resColor};">${f.res}</td>${mInv ? `<td>${esc(f.inv)}</td>` : ''}<td>${esc(f.imp)}</td><td>${esc(f.ctr)}</td></tr>`).join('')}
+          <tr class="total-row"><td class="label">Total</td><td class="figure-red">${m.total.res}</td>${mInv ? `<td>${esc(m.total.inv)}</td>` : ''}<td>${esc(m.total.imp)}</td><td>${esc(m.total.ctr)}</td></tr>
           </tbody></table>
         ${m.nota ? `<div class="note-block" style="margin-top:16px;">${esc(m.nota)}</div>` : ''}</div>` : '';
 
