@@ -692,9 +692,9 @@ const REPORTS = [
   },
 
   acciones: {
-    pendiente: 'Cobertura calculada con las columnas de acciones del export de cartera, que solo traen el recuento por propiedad. Pendiente el listado detallado de acciones del periodo y los datos de Meta Ads.',
+    pendiente: 'Cobertura calculada con las columnas de acciones del export de cartera, que solo traen el recuento por propiedad. Pendiente el listado detallado de acciones del periodo por canal y responsable.',
     paid: {
-      titulo: 'Google Ads · 1 julio a 21 septiembre',
+      titulo: 'Paid Media · 1 julio a 21 septiembre',
       google: {
         titulo: 'Google Ads · Captación',
         kpis: [
@@ -716,7 +716,31 @@ const REPORTS = [
         },
         nota: 'La obra nueva se lleva el 48% de la inversión y genera el 62% de los leads. Resale sellers y branding suman 625€ y ni un solo lead en todo el trimestre.'
       },
+      meta: {
+        titulo: 'Rendimiento por conjunto de anuncios',
+        filas: [
+          { name:'Propiedades Resale', res:0, resColor:'#4A4A4A', inv:'548€', imp:'67.038', ctr:'0.86%' },
+          { name:'Resale Sellers · MRB+MLG', res:1, resColor:'#2A6E20', inv:'277€', imp:'43.542', ctr:'0.77%' },
+          { name:'Vídeos Feed · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'277€', imp:'40.749', ctr:'0.52%' },
+          { name:'Branding · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'276€', imp:'36.842', ctr:'1.07%' },
+          { name:'Resale Buyers · MRB+MLG', res:0, resColor:'#4A4A4A', inv:'276€', imp:'21.702', ctr:'2.63%' }
+        ],
+        total: { res:1, inv:'1.655€', imp:'209.873', ctr:'0.99%' },
+        nota: 'Cuatro de los cinco conjuntos pertenecen a una campaña compartida entre Marbella y Málaga, así que ni esa inversión ni ese único lead son atribuibles solo a Marbella.'
+      },
       tablas: [
+        {
+          eyebrow: 'Visión conjunta',
+          titulo: 'Google Ads frente a Meta Ads',
+          headers: ['Canal', 'Inversión', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
+          destacar: 5,
+          filas: [
+            ['Google Ads', '8.516€', '208.878', '10.408', '4.98%', '40.1', '213€'],
+            ['Meta Ads', '1.655€', '209.873', '2.087', '0.99%', '1.0', '1.655€']
+          ],
+          total: ['Total paid', '10.170€', '418.751', '12.495', '2.98%', '41.1', '248€'],
+          nota: 'Los dos canales compraron prácticamente las mismas impresiones, 208.878 Google y 209.873 Meta, pero Meta costó una quinta parte: 7.88€ de CPM frente a 40.77€. La diferencia está en la conversión. Google convirtió ese alcance en 40 leads y Meta en 1. En mayo y junio Meta sí rendía, con 27 resultados y la campaña de producto de Kristina Views; este trimestre se reorientó a branding y la captación se apagó.'
+        },
         {
           eyebrow: 'Detalle',
           titulo: 'Rendimiento por campaña',
