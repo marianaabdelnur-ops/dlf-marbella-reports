@@ -322,7 +322,6 @@ const REPORTS = [
   id: 'julio',
   label: 'Julio 2026',
   periodo: 'Julio 2026',
-  activo: true,
   fuente: 'Power BI Marbella · 1 julio 2026',
 
   cartera: {
@@ -563,6 +562,138 @@ const REPORTS = [
   {ref:'MRB66598',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Activa'}]}
     ]
   }
+},
+
+/* ---------- SEPTIEMBRE 2026 ---------- */
+{
+  id: 'septiembre',
+  label: 'Septiembre 2026',
+  periodo: 'Septiembre 2026',
+  activo: true,
+  fuente: 'Power BI Marbella · 21 septiembre 2026',
+
+  cartera: {
+    available: [
+      { eyebrow:'Cartera Available', val:'303', sub:'propiedades disponibles totales', main:true },
+      { eyebrow:'Live', val:'244', sub:'80.5% · en comercialización' },
+      { eyebrow:'Pending', val:'54', sub:'17.8% · en preparación' },
+      { eyebrow:'Confidential Sale', val:'5', sub:'1.7% · venta reservada' }
+    ],
+    tipologia: [
+      { label:'Tipología · sobre cartera available (303)', items:[
+        { n:'Obra Nueva (ND)', v:141, pct:46.5, color:'#E73838' },
+        { n:'Resale', v:162, pct:53.5, color:'#5A8A7A' }
+      ]},
+      { label:'Tipología · sobre live en web (244)', items:[
+        { n:'Obra Nueva (ND)', v:108, pct:44.3, color:'#E73838' },
+        { n:'Resale', v:136, pct:55.7, color:'#5A8A7A' }
+      ]}
+    ],
+    tipologiaNota: 'Por primera vez el resale pesa más que la obra nueva en la cartera. En proyectos de obra nueva con muchas unidades solo se publican algunas en web, así que el inventario real disponible sigue siendo mayor al listado en portal.',
+    liveNota: 'Cartera live en web · 244 propiedades',
+    baseNota: 'Cálculo de comisión: se corrigieron 4 fichas que tenían el porcentaje grabado como 500 en lugar de 5, y se excluyeron 2 fichas (Casatalaya Residences y Looa) con el campo de comisión corrupto. Hay además 9 propiedades live con 0% de comisión registrada, que suman 13,4M€ de valor y no aportan comisión potencial.',
+    kpis: [
+      { eyebrow:'Live en web', val:'244', sub:'ND 108 · resale 136' },
+      { eyebrow:'Meta Score medio', val:'71.5%', sub:'sobre las 244 live · objetivo +80%' },
+      { eyebrow:'Con leads activos', val:'92', sub:'38% de la cartera live' },
+      { eyebrow:'Valor cartera live', val:'821M€', sub:'precio de venta' }
+    ],
+    comisionKpis: [
+      { eyebrow:'Comisión potencial total', val:'36.6M€', sub:'sobre cartera live' },
+      { eyebrow:'Comisión con leads', val:'12.8M€', sub:'92 propiedades activas' },
+      { eyebrow:'Comisión sin leads', val:'23.7M€', sub:'152 prop. a activar' }
+    ],
+    metaScore: {
+      verde:182, amarillo:1, rojo:1, sinCalcular:60,
+      nota:'Power BI solo calcula Meta Score para 184 de las 244 live. Los 60 proyectos de obra nueva restantes no tienen puntuación asignada, así que no entran ni en verde ni en rojo.'
+    },
+    precio: { labels:['< 1M','1M-2M','> 2M'], data:[79,49,116], colores:['#2A4A8A','#4A6AAA','#8AAAD4'] },
+    leadsSplit: { con:92, sin:152 },
+    topLeadsChart: {
+      labels:['Kristina Views','MRB66691','MRB66238','Medblue','MRB16833'],
+      data:[143,31,21,20,18],
+      colores:['#E73838','#2A6E20','#2A6E20','#B87820','#B87820']
+    },
+    alertas: {
+      titulo: 'Alerta · Obra nueva de alto valor sin un solo lead',
+      filas: [
+        { txt:'TierraViva · 8.400.000€', badge:'374 días' },
+        { txt:'El Bosque II · 8.250.000€', badge:'220 días' },
+        { txt:'Vista Lago Residences · 6.995.000€', badge:'1.223 días' },
+        { txt:'The Avenue · 5.500.000€', badge:'395 días' },
+        { txt:'Earth · 5.370.000€', badge:'94 días' }
+      ]
+    },
+    comisiones: {
+      valor:'821.313.948€', media:'4.46%',
+      desglose:[ {l:'Con leads · 271.4M€', v:'12.820.047€'}, {l:'Sin leads · 549.9M€', v:'23.744.420€'} ],
+      total:'36.564.467€'
+    },
+    topLeads: [
+      { ref:'Kristina Views', precio:'545.000€', com:'7%', enq:143, dias:227, meta:'n/d', metaClase:'b-amber' },
+      { ref:'MRB66691', precio:'450.000€', com:'4%', enq:31, dias:187, meta:'100%', metaClase:'b-green' },
+      { ref:'MRB66238', precio:'450.000€', com:'4%', enq:21, dias:228, meta:'100%', metaClase:'b-green' },
+      { ref:'Medblue', precio:'n/d', com:'5%', enq:20, dias:1608, meta:'n/d', metaClase:'b-amber' },
+      { ref:'MRB16833', precio:'520.000€', com:'5%', enq:18, dias:4, meta:'20%', metaClase:'b-red' },
+      { ref:'MRB68264', precio:'535.000€', com:'5%', enq:10, dias:166, meta:'100%', metaClase:'b-green' }
+    ],
+    antiguedad: { labels:['Epic Marbella','Soul Marbella','The View','Marbella Lake','DUNIQUE'], data:[3027,2610,2576,1735,1671] },
+    zonas: [
+      { n:'East Marbella', v:70 }, { n:'Benahavís', v:44 }, { n:'Nueva Andalucía', v:38 },
+      { n:'Golden Mile', v:24 }, { n:'Mijas', v:22 }, { n:'Sotogrande', v:19 },
+      { n:'New Golden Mile', v:12 }, { n:'San Pedro de Alcántara', v:11 }, { n:'Casares', v:9 },
+      { n:'Estepona Town', v:9 }, { n:'La Quinta', v:8 }
+    ],
+    funnel: {
+      pasos: [
+        { label:'Available', v:303 },
+        { label:'Live', v:244, pct:'80.5%' },
+        { label:'Con Viewings', v:19, pct:'6.3%' },
+        { label:'Con Ofertas', v:1, pct:'0.3%' }
+      ],
+      nota: 'De 303 propiedades disponibles, 244 están live. Se registraron 68 visitas concentradas en solo 19 propiedades, y hoy hay una única oferta sobre la mesa: MRB66691, 450.000€ al 4%, 18.000€ de comisión.'
+    },
+    evolucion: {
+      titulo: 'Evolución respecto al report de Julio',
+      metricas: [
+        { label:'Cartera live', de:'185', a:'244', delta:'+59', dir:'up' },
+        { label:'Con leads activos', de:'49', a:'92', delta:'+43', dir:'up' },
+        { label:'Valor cartera live', de:'497M€', a:'821M€', delta:'+324M€', dir:'up' },
+        { label:'Comisión potencial', de:'23.7M€', a:'36.6M€', delta:'+12.9M€', dir:'up' }
+      ],
+      narrativa: [
+        '<strong>La cartera crece un 32% en propiedades live</strong> (185 → 244) y un 65% en valor (497M€ → 821M€). El motor es la captación de resale, que pasa de 60 a 162 propiedades disponibles y por primera vez pesa más que la obra nueva. El salto de valor se concentra en el tramo alto: 116 de las 244 live superan los 2M€.',
+        '<strong>El trabajo sobre el Meta Score dio resultado.</strong> De las 184 fichas que Power BI puntúa, 182 están en verde (+80%) y la media de ese grupo es del 94,8%. El frente abierto ahora es otro: los 60 proyectos de obra nueva que no tienen Meta Score asignado y quedan fuera del control de calidad de ficha.',
+        '<strong>Las propiedades con leads se duplican</strong> (49 → 92), pero siguen quedando 152 sin ningún lead, con 23,7M€ de comisión dormida. Y el pipeline se estrechó: de 4 ofertas abiertas en julio a 1 sola hoy, con 68 visitas concentradas en 19 propiedades. Más tráfico arriba del embudo y menos conversión abajo.'
+      ]
+    }
+  },
+
+  leads: {
+    kpis: [
+      { eyebrow:'Total leads 2026', val:'417', sub:'acumulado al 21 septiembre', accent:true },
+      { eyebrow:'Canal principal', val:'LF Web', sub:'61.63% de leads' },
+      { eyebrow:'Mejor mes', val:'Marzo', sub:'95 enquiries' },
+      { eyebrow:'Leads de Paid', val:'61.5%', sub:'del canal LF Website' }
+    ],
+    mensual: { labels:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep'], data:[4,8,95,74,75,47,52,44,18] },
+    groupPath: [
+      { n:'LF Website', leads:257, pct:'61.63%', color:'#5A8A7A' },
+      { n:'National Portal', leads:93, pct:'22.30%', color:'#1A3028' },
+      { n:'International Portal', leads:48, pct:'11.51%', color:'#8A8A8A' },
+      { n:'Offline', leads:19, pct:'4.56%', color:'#C8C4BC' }
+    ],
+    webPath: [
+      { n:'Paid', leads:158, pct:'61.5%', color:'#5A8A7A' },
+      { n:'Organic & Direct', leads:84, pct:'32.7%', color:'#8AAAD4' },
+      { n:'Email', leads:15, pct:'5.8%', color:'#1A1A1A' }
+    ],
+    webPathNota: 'Paid sigue siendo el motor del canal web pero cede terreno: 61,5% frente al 65% de julio. El orgánico recupera peso (32,7% frente a 28,1%). Septiembre va con 18 leads a día 21, por debajo del ritmo de julio y agosto.'
+  },
+
+  acciones: {
+    pendiente: 'Pendiente de los datos de paid media de Ander y Daniel y del listado de acciones del periodo.'
+  }
 }
 
 /* ---------- PLANTILLA_MES · copia este bloque para el mes siguiente ----------
@@ -663,13 +794,16 @@ function vistaCartera(r) {
 
   /* fila de distribucion */
   const ms = c.metaScore;
+  const msLeyenda = [
+    { color:'#2A6E20', txt:`Verde +80% · ${ms.verde}` },
+    { color:'#B87820', txt:`Amarillo 60-80% · ${ms.amarillo}` },
+    { color:'#E73838', txt:`Rojo <60% · ${ms.rojo}` }
+  ];
+  if (ms.sinCalcular) msLeyenda.push({ color:'#C8C4BC', txt:`Sin Meta Score · ${ms.sinCalcular}` });
   const cardMeta = `<div class="card"><p class="card-eyebrow">Distribución</p><p class="card-title">Meta Score</p>
-    ${elLeyenda([
-      { color:'#2A6E20', txt:`Verde +80% · ${ms.verde}` },
-      { color:'#B87820', txt:`Amarillo 60-80% · ${ms.amarillo}` },
-      { color:'#E73838', txt:`Rojo <60% · ${ms.rojo}` }
-    ])}
-    <div style="position:relative;height:190px;"><canvas id="${id}-metaChart"></canvas></div></div>`;
+    ${elLeyenda(msLeyenda)}
+    <div style="position:relative;height:190px;"><canvas id="${id}-metaChart"></canvas></div>
+    ${ms.nota ? `<div class="note-block" style="margin-top:14px;">${esc(ms.nota)}</div>` : ''}</div>`;
 
   if (c.precio) {
     const p = c.precio;
@@ -882,7 +1016,7 @@ function vistaAcciones(r) {
             `<div class="ma-action"><span class="ma-date">${esc(x.d)}</span><span class="ma-ch ${x.c}">${esc(x.ch)}</span><span class="ma-act">${esc(x.a)}</span><span class="badge ${x.s === 'Completada' ? 'b-green' : 'b-amber'}">${esc(x.s)}</span></div>`).join('')}</div></div>`;
       }).join('')}</div>`;
   }
-  return h || '<div class="placeholder-box">Sin acciones registradas en este periodo.</div>';
+  return h || `<div class="placeholder-box">${esc(a.pendiente || 'Sin acciones registradas en este periodo.')}</div>`;
 }
 
 /* --- montaje --- */
@@ -972,11 +1106,15 @@ function pintarCharts(id, tab) {
   if (tab === 'cartera') {
     const c = r.cartera;
     const elMeta = document.getElementById(id + '-metaChart');
-    if (elMeta) new Chart(elMeta, {
-      type:'doughnut',
-      data:{ labels:['Verde','Amarillo','Rojo'], datasets:[{ data:[c.metaScore.verde, c.metaScore.amarillo, c.metaScore.rojo], backgroundColor:['#2A6E20','#B87820','#E73838'], borderWidth:0 }] },
-      options:{ ...OPTS, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:x => ' ' + x.label + ': ' + x.raw + ' props.' } } } }
-    });
+    if (elMeta) {
+      const msLab = ['Verde','Amarillo','Rojo'], msDat = [c.metaScore.verde, c.metaScore.amarillo, c.metaScore.rojo], msCol = ['#2A6E20','#B87820','#E73838'];
+      if (c.metaScore.sinCalcular) { msLab.push('Sin Meta Score'); msDat.push(c.metaScore.sinCalcular); msCol.push('#C8C4BC'); }
+      new Chart(elMeta, {
+        type:'doughnut',
+        data:{ labels:msLab, datasets:[{ data:msDat, backgroundColor:msCol, borderWidth:0 }] },
+        options:{ ...OPTS, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:x => ' ' + x.label + ': ' + x.raw + ' props.' } } } }
+      });
+    }
     if (c.precio) {
       const el = document.getElementById(id + '-precioChart');
       if (el) new Chart(el, {
