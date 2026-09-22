@@ -653,6 +653,41 @@ const REPORTS = [
       ],
       nota: 'De 303 propiedades disponibles, 244 están live. Se registraron 68 visitas concentradas en solo 19 propiedades, y hoy hay una única oferta sobre la mesa: MRB66691, 450.000€ al 4%, 18.000€ de comisión.'
     },
+    secciones: [
+      {
+        eyebrow: 'Propuesta del mes',
+        titulo: 'Las 10 propiedades estrella',
+        kpis: [
+          { eyebrow:'Propiedades seleccionadas', val:'10', sub:'de 77 que cumplen el perfil', accent:true },
+          { eyebrow:'Valor conjunto', val:'68.9M€', sub:'precio de venta' },
+          { eyebrow:'Comisión en juego', val:'3.17M€', sub:'8.7% del potencial total' },
+          { eyebrow:'Leads acumulados', val:'29', sub:'demanda ya demostrada' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Selección',
+            titulo: 'Propiedades a mover este mes',
+            headers: ['Ref.', 'Dirección', 'Precio', '% Com.', 'Comisión', 'Meta', 'Leads', 'Días'],
+            destacar: 4,
+            filas: [
+              ['MRB25473', 'Vista Lago V9, Benahavís', '6.995.000€', '4%', '279.800€', '93%', '5', '111'],
+              ['MRB70829', 'Golden Mile 1, Marbella', '11.400.000€', '4%', '456.000€', '93%', '3', '84'],
+              ['EST66195', 'El Paraíso 265, Estepona', '3.749.500€', '6%', '224.970€', '100%', '4', '40'],
+              ['MRB72291', 'C. Cártama 1, Marbella', '7.800.000€', '4%', '312.000€', '98%', '3', '48'],
+              ['MRB66598', 'Reserva de Alcuzcuz, Stonehaven, Benahavís', '11.250.000€', '5%', '562.500€', '100%', '2', '216'],
+              ['MRB68602', 'Pablo Ruiz Picasso 13, Marbella', '2.750.000€', '4%', '110.000€', '98%', '4', '126'],
+              ['MRB66566', 'Gray D\'Albion, Puerto Banús', '5.900.000€', '5%', '295.000€', '100%', '2', '188'],
+              ['MRB66658', 'Reserva de Alcuzcuz, Forest Edge, Benahavís', '8.250.000€', '5%', '412.500€', '100%', '2', '216'],
+              ['MRB66608', 'Atalaya de Río Verde 11, Nueva Andalucía', '2.900.000€', '4%', '116.000€', '100%', '3', '133'],
+              ['MRB68897', 'Sierra de Istán 3, Marbella', '7.950.000€', '5%', '397.500€', '100%', '1', '147']
+            ],
+            total: ['Total · 10 propiedades', '', '68.944.500€', '', '3.166.270€', '98.2%', '29', ''],
+            nota: 'Criterio de selección: propiedades live, con comisión registrada y con al menos un lead recibido. Sobre las 77 que cumplen ese perfil se puntúa cada una con un 40% de peso para la comisión potencial, un 40% para la entrada de leads y un 20% para el Meta Score, y se toman las diez mejores. La lista es una propuesta del equipo de marketing, pensada para discutirse y ajustarse en la reunión.'
+          }
+        ],
+        nota: 'Son propiedades con ticket alto, demanda ya demostrada y ficha lista, que es donde una acción de marketing tiene más probabilidad de convertir. Kristina Views se queda fuera pese a sus 143 leads porque su ticket por unidad es bajo y, al ser obra nueva, Power BI no le calcula Meta Score. Sigue siendo el producto estrella en paid, pero por otra vía.'
+      }
+    ],
     evolucion: {
       titulo: 'Evolución respecto al report de Julio',
       metricas: [
@@ -850,40 +885,6 @@ const REPORTS = [
       ]
     },
     secciones: [
-      {
-        antes: true,
-        eyebrow: 'Propuesta del mes',
-        titulo: 'Las 10 propiedades estrella',
-        kpis: [
-          { eyebrow:'Propiedades seleccionadas', val:'10', sub:'de 96 que cumplen el perfil', accent:true },
-          { eyebrow:'Valor conjunto', val:'116.8M€', sub:'precio de venta' },
-          { eyebrow:'Comisión en juego', val:'4.57M€', sub:'12.5% del potencial total' },
-          { eyebrow:'Acciones realizadas', val:'0', sub:'ninguna ha sido promocionada' }
-        ],
-        tablas: [
-          {
-            eyebrow: 'Selección',
-            titulo: 'Propiedades a mover este mes',
-            headers: ['Ref.', 'Dirección', 'Precio', '% Com.', 'Comisión', 'Meta', 'Leads', 'Días'],
-            destacar: 4,
-            filas: [
-              ['MRB72298', 'C. Oslo 1, Marbella', '19.500.000€', '4%', '780.000€', '98%', '0', '48'],
-              ['MRB66593', 'Reserva de Alcuzcuz, Forest Bay, Benahavís', '9.450.000€', '5%', '472.500€', '100%', '0', '216'],
-              ['MRB72272', 'C. Pinos de Nagüeles 1, Marbella', '14.900.000€', '3%', '447.000€', '98%', '0', '56'],
-              ['MRB72103', 'C. Bruselas 32, Marbella', '10.850.000€', '4%', '434.000€', '98%', '0', '32'],
-              ['MRB72287', 'C. Milán 28-D, Marbella', '10.500.000€', '4%', '420.000€', '98%', '0', '48'],
-              ['MRB66658', 'Reserva de Alcuzcuz, Forest Edge, Benahavís', '8.250.000€', '5%', '412.500€', '100%', '2', '216'],
-              ['MRB72265', 'C. Pinos de Nagüeles 1, Marbella', '13.500.000€', '3%', '405.000€', '98%', '0', '56'],
-              ['MRB70098', 'Vista Lago V 16, Benahavís', '9.995.000€', '4%', '399.800€', '100%', '0', '111'],
-              ['MRB72072', 'C. Sierra Nevada 1, Marbella', '9.950.000€', '4%', '398.000€', '98%', '0', '33'],
-              ['MRB71753', 'Aloha 40, Marbella', '9.950.000€', '4%', '398.000€', '100%', '0', '67']
-            ],
-            total: ['Total · 10 propiedades', '', '116.845.000€', '', '4.566.800€', '', '2', ''],
-            nota: 'Criterio de selección: propiedades live, con la ficha ya optimizada (Meta Score de 90% o más, todas las elegidas están entre 98% y 100%), con comisión registrada y sin ninguna acción de marketing realizada. De las 96 que cumplen ese perfil se toman las 10 de mayor comisión potencial. La lista es una propuesta del equipo de marketing, pensada para discutirse y ajustarse en la reunión.'
-          }
-        ],
-        nota: 'La lógica es concentrar el esfuerzo donde más rinde: fichas impecables que nadie ha promocionado todavía. Las 96 propiedades que cumplen el perfil suman 15,2M€ de comisión potencial, así que estas 10 son el primer corte, no el único posible.'
-      },
       {
         eyebrow: 'Detalle operativo',
         titulo: 'Cobertura de acciones de marketing',
@@ -1146,6 +1147,8 @@ function vistaCartera(r) {
   }
 
   if (c.baseNota) h += `<p class="basis-note" style="margin-bottom:0;">${esc(c.baseNota)}</p>`;
+
+  (c.secciones || []).forEach(s => { h += elSeccion(s); });
 
   /* evolucion o contexto */
   if (c.evolucion) {
