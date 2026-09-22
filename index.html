@@ -798,7 +798,7 @@ const REPORTS = [
   },
 
   acciones: {
-    pendiente: 'Faltan los responsables de cada acción del periodo. El detalle por propiedad cubre 74 propiedades de la cartera available; la cobertura de más abajo se mide solo sobre las 244 live.',
+    pendiente: 'Faltan los responsables de cada acción del periodo. El detalle por propiedad, en la pestaña Marketing Actions, cubre 74 propiedades de la cartera available; la cobertura de aquí se mide solo sobre las 244 live.',
     marketingActions: [
   {ref:'MRB70204',acc:[{d:'18/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'18/06/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'18/06/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'18/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'19/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
   {ref:'MRB70173',acc:[{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'15/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
@@ -1767,22 +1767,39 @@ function vistaAcciones(r) {
        <div class="col-body">${col.cards.map(elKCard).join('')}</div></div>`).join('')}</div>`;
   });
 
+
+
+  /* mini resumen de las marketing actions; el detalle vive en su pestana */
   if (a.marketingActions && a.marketingActions.length) {
     const props = a.marketingActions;
-    const nAcc = props.reduce((s, p) => s + p.acc.length, 0);
-    h += `<div style="margin-bottom:16px;margin-top:32px;"><p class="section-eyebrow">Detalle operativo</p><h2 class="section-title" style="font-size:22px;">Marketing Actions por Propiedad</h2><hr class="section-rule" style="margin-bottom:20px;"></div>
-      <div class="ma-controls">
-        <input class="ma-search" id="${id}-ma-search" type="text" placeholder="Buscar por referencia..." data-ma="${id}">
-        <span class="ma-count" id="${id}-ma-count">${props.length} propiedades · ${nAcc} acciones</span>
-      </div>
-      <div id="${id}-ma-list">${props.map(p => {
-        const done = p.acc.filter(x => x.s === 'Completada').length;
-        return `<div class="ma-prop"><div class="ma-prop-head"><span class="ma-ref">${esc(p.ref)}</span><span class="ma-summary">${p.acc.length} acciones · ${done} completadas · ${p.acc.length - done} activas</span><span class="ma-chevron">&#9662;</span></div>
-          <div class="ma-actions">${p.acc.map(x =>
-            `<div class="ma-action"><span class="ma-date">${esc(x.d)}</span><span class="ma-ch ${x.c}">${esc(x.ch)}</span><span class="ma-act">${esc(x.a)}</span><span class="badge ${x.s === 'Completada' ? 'b-green' : 'b-amber'}">${esc(x.s)}</span></div>`).join('')}</div></div>`;
-      }).join('')}</div>`;
+    const todas = props.flatMap(p => p.acc);
+    const hechas = todas.filter(x => x.s === 'Completada').length;
+    const porCanal = {};
+    todas.forEach(x => {
+      if (!porCanal[x.ch]) porCanal[x.ch] = { n:0, props:new Set(), clase:x.c };
+      porCanal[x.ch].n++;
+    });
+    props.forEach(p => { const vistos = new Set(); p.acc.forEach(x => { if (!vistos.has(x.ch)) { vistos.add(x.ch); porCanal[x.ch].props.add(p.ref); } }); });
+    const filas = Object.keys(porCanal).sort((a2, b2) => porCanal[b2].n - porCanal[a2].n).map(k => {
+      const c2 = porCanal[k];
+      const nProps = c2.props.size;
+      return [k, String(c2.n), ((c2.n / todas.length) * 100).toFixed(1) + '%', String(nProps)];
+    });
+    h += elSectionHead('Resumen operativo', 'Marketing Actions por propiedad', true);
+    h += elKpiGrid([
+      { eyebrow:'Propiedades trabajadas', val:String(props.length), sub:'con al menos una acción', accent:true },
+      { eyebrow:'Acciones registradas', val:String(todas.length), sub:'en el histórico de la cartera' },
+      { eyebrow:'Completadas', val:String(hechas), sub:((hechas / todas.length) * 100).toFixed(0) + '% del total' },
+      { eyebrow:'Activas', val:String(todas.length - hechas), sub:'en curso ahora mismo' }
+    ]);
+    h += elTablaLibre({
+      eyebrow:'Reparto', titulo:'Acciones por canal', destacar:1,
+      headers:['Canal', 'Acciones', '% del total', 'Propiedades'],
+      filas: filas,
+      total:['Total', String(todas.length), '100%', String(props.length)],
+      nota:'El detalle completo, con la fecha y el estado de cada acción propiedad a propiedad, está en la pestaña Marketing Actions.'
+    });
   }
-
   h += paidHtml;
 
   (a.secciones || []).filter(s => !s.antes).forEach(s => { h += elSeccion(s); });
@@ -1792,11 +1809,43 @@ function vistaAcciones(r) {
   return h;
 }
 
+
+/* --- vista 4: marketing actions por propiedad --- */
+function vistaMarketingActions(r) {
+  const a = r.acciones, id = uid(r);
+  const props = (a && a.marketingActions) || [];
+  if (!props.length) {
+    return '<div class="placeholder-box">Todavía no hay acciones registradas por propiedad en este periodo.</div>';
+  }
+  const nAcc = props.reduce((s, p) => s + p.acc.length, 0);
+  const activas = props.reduce((s, p) => s + p.acc.filter(x => x.s !== 'Completada').length, 0);
+
+  let h = elSectionHead('Detalle operativo', 'Marketing Actions por Propiedad');
+  h += elKpiGrid([
+    { eyebrow:'Propiedades', val:String(props.length), sub:'con al menos una acción', accent:true },
+    { eyebrow:'Acciones', val:String(nAcc), sub:'histórico de la cartera' },
+    { eyebrow:'Completadas', val:String(nAcc - activas), sub:'cerradas' },
+    { eyebrow:'Activas', val:String(activas), sub:'en curso' }
+  ]);
+  h += `<div class="ma-controls">
+      <input class="ma-search" id="${id}-ma-search" type="text" placeholder="Buscar por referencia..." data-ma="${id}">
+      <span class="ma-count" id="${id}-ma-count">${props.length} propiedades · ${nAcc} acciones</span>
+    </div>
+    <div id="${id}-ma-list">${props.map(p => {
+      const done = p.acc.filter(x => x.s === 'Completada').length;
+      return `<div class="ma-prop"><div class="ma-prop-head"><span class="ma-ref">${esc(p.ref)}</span><span class="ma-summary">${p.acc.length} acciones · ${done} completadas · ${p.acc.length - done} activas</span><span class="ma-chevron">&#9662;</span></div>
+        <div class="ma-actions">${p.acc.map(x =>
+          `<div class="ma-action"><span class="ma-date">${esc(x.d)}</span><span class="ma-ch ${x.c}">${esc(x.ch)}</span><span class="ma-act">${esc(x.a)}</span><span class="badge ${x.s === 'Completada' ? 'b-green' : 'b-amber'}">${esc(x.s)}</span></div>`).join('')}</div></div>`;
+    }).join('')}</div>
+    <p class="basis-note" style="margin-top:20px;margin-bottom:0;">Ordenadas de más a menos acciones. Haz clic en cualquier referencia para desplegar el detalle con la fecha, el canal y el estado de cada acción.</p>`;
+  return h;
+}
 /* --- montaje --- */
 const TABS = [
   { k:'cartera', l:'Cartera & Datos', fn:vistaCartera },
   { k:'leads', l:'Análisis de Leads', fn:vistaLeads },
-  { k:'acciones', l:'Acciones de Marketing', fn:vistaAcciones }
+  { k:'acciones', l:'Marketing', fn:vistaAcciones },
+  { k:'maprop', l:'Marketing Actions', fn:vistaMarketingActions }
 ];
 const pintado = {};
 const uid = r => r.oficina + '-' + r.id;
