@@ -728,20 +728,46 @@ const REPORTS = [
 
   acciones: {
     pendiente: 'La cobertura por propiedad se calcula con las columnas de acciones del export de cartera, que solo traen el recuento. Faltan los responsables de cada acción del periodo.',
-    kanban: [
-      { estado:'Realizadas', clase:'col-done', cards:[
-        { t:'Informe de Propiedades a un clic', m:'Nueva herramienta de la web', tags:[{c:'kt-portal',l:'Producto'}] },
-        { t:'Buscador con IA en la web', m:'Nueva funcionalidad', tags:[{c:'kt-portal',l:'Producto'}] },
-        { t:'Informe de obra nueva para promotores', m:'Herramienta comercial', tags:[{c:'kt-portal',l:'Producto'}] },
-        { t:'Partnership con Gunni & Trentino', m:'Acuerdo de marca', tags:[{c:'kt-prensa',l:'Marca'}] },
-        { t:'Inauguración de la oficina de Málaga', m:'16 de septiembre', tags:[{c:'kt-offline',l:'Evento'}] },
-        { t:'6 publicaciones en prensa', m:'Costa del Sol', tags:[{c:'kt-prensa',l:'Prensa'}] }
-      ]},
-      { estado:'Coming Up', clase:'col-coming', cards:[
-        { t:'Mini informe · nota de prensa', m:'Martes 29 de septiembre', tags:[{c:'kt-prensa',l:'Prensa'}] },
-        { t:'Mini informe · email a base de datos', m:'Martes 29 de septiembre', tags:[{c:'kt-email',l:'Email'}] },
-        { t:'Mini informe · post en redes', m:'Martes 29 de septiembre', tags:[{c:'kt-social',l:'RRSS'}] }
-      ]}
+    destacadoTitulo: 'Acción destacada del periodo',
+    destacado: {
+      eyebrow: 'Caso destacado · Auditoría de obra nueva',
+      titulo: 'Revisión completa de todos los proyectos de obra nueva de la oficina',
+      items: [
+        { b:'Alcance total', t:': los 141 proyectos de obra nueva disponibles de Marbella, de los cuales 108 están live en web.' },
+        { b:'El punto ciego que cubre', t:': la obra nueva no recibe Meta Score en Power BI, así que 60 proyectos live quedaban fuera del control de calidad de ficha que sí cubre al resto de la cartera.' },
+        { b:'Lo que hay en juego', t:': la obra nueva concentra 98,6M€ de valor live y casi la mitad de las propiedades disponibles de la oficina.' },
+        { b:'Siguiente paso', t:': trasladar los hallazgos de la auditoría a un plan de corrección por proyecto, con prioridad en los de mayor ticket sin leads.' }
+      ]
+    },
+    tableros: [
+      {
+        eyebrow: 'Plan de acción',
+        titulo: 'Acciones generales · Dils Lucas Fox',
+        columnas: [
+          { estado:'Realizadas', clase:'col-done', cards:[
+            { t:'Informe de Propiedades a un clic', m:'Nueva herramienta de la web', tags:[{c:'kt-portal',l:'Producto'}] },
+            { t:'Buscador con IA en la web', m:'Nueva funcionalidad', tags:[{c:'kt-portal',l:'Producto'}] },
+            { t:'Informe de obra nueva para promotores', m:'Herramienta comercial', tags:[{c:'kt-portal',l:'Producto'}] },
+            { t:'Partnership con Gunni & Trentino', m:'Acuerdo de marca', tags:[{c:'kt-prensa',l:'Marca'}] }
+          ]}
+        ]
+      },
+      {
+        eyebrow: 'Plan de acción',
+        titulo: 'Acciones locales · Marbella y Costa del Sol',
+        columnas: [
+          { estado:'Realizadas', clase:'col-done', cards:[
+            { t:'Auditoría de toda la obra nueva de la oficina', m:'141 proyectos revisados', tags:[{c:'kt-portal',l:'Cartera'}], pri:{clase:'p-alta',l:'Destacado'} },
+            { t:'Inauguración de la oficina de Málaga', m:'16 de septiembre', tags:[{c:'kt-offline',l:'Evento'}] },
+            { t:'6 publicaciones en prensa', m:'Costa del Sol', tags:[{c:'kt-prensa',l:'Prensa'}] }
+          ]},
+          { estado:'Coming Up', clase:'col-coming', cards:[
+            { t:'Mini informe · nota de prensa', m:'Martes 29 de septiembre', tags:[{c:'kt-prensa',l:'Prensa'}] },
+            { t:'Mini informe · email a base de datos', m:'Martes 29 de septiembre', tags:[{c:'kt-email',l:'Email'}] },
+            { t:'Mini informe · post en redes', m:'Martes 29 de septiembre', tags:[{c:'kt-social',l:'RRSS'}] }
+          ]}
+        ]
+      }
     ],
     paid: {
       titulo: 'Paid Media · 1 julio a 21 septiembre',
@@ -824,6 +850,40 @@ const REPORTS = [
       ]
     },
     secciones: [
+      {
+        antes: true,
+        eyebrow: 'Propuesta del mes',
+        titulo: 'Las 10 propiedades estrella',
+        kpis: [
+          { eyebrow:'Propiedades seleccionadas', val:'10', sub:'de 96 que cumplen el perfil', accent:true },
+          { eyebrow:'Valor conjunto', val:'116.8M€', sub:'precio de venta' },
+          { eyebrow:'Comisión en juego', val:'4.57M€', sub:'12.5% del potencial total' },
+          { eyebrow:'Acciones realizadas', val:'0', sub:'ninguna ha sido promocionada' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Selección',
+            titulo: 'Propiedades a mover este mes',
+            headers: ['Ref.', 'Dirección', 'Precio', '% Com.', 'Comisión', 'Meta', 'Leads', 'Días'],
+            destacar: 4,
+            filas: [
+              ['MRB72298', 'C. Oslo 1, Marbella', '19.500.000€', '4%', '780.000€', '98%', '0', '48'],
+              ['MRB66593', 'Reserva de Alcuzcuz, Forest Bay, Benahavís', '9.450.000€', '5%', '472.500€', '100%', '0', '216'],
+              ['MRB72272', 'C. Pinos de Nagüeles 1, Marbella', '14.900.000€', '3%', '447.000€', '98%', '0', '56'],
+              ['MRB72103', 'C. Bruselas 32, Marbella', '10.850.000€', '4%', '434.000€', '98%', '0', '32'],
+              ['MRB72287', 'C. Milán 28-D, Marbella', '10.500.000€', '4%', '420.000€', '98%', '0', '48'],
+              ['MRB66658', 'Reserva de Alcuzcuz, Forest Edge, Benahavís', '8.250.000€', '5%', '412.500€', '100%', '2', '216'],
+              ['MRB72265', 'C. Pinos de Nagüeles 1, Marbella', '13.500.000€', '3%', '405.000€', '98%', '0', '56'],
+              ['MRB70098', 'Vista Lago V 16, Benahavís', '9.995.000€', '4%', '399.800€', '100%', '0', '111'],
+              ['MRB72072', 'C. Sierra Nevada 1, Marbella', '9.950.000€', '4%', '398.000€', '98%', '0', '33'],
+              ['MRB71753', 'Aloha 40, Marbella', '9.950.000€', '4%', '398.000€', '100%', '0', '67']
+            ],
+            total: ['Total · 10 propiedades', '', '116.845.000€', '', '4.566.800€', '', '2', ''],
+            nota: 'Criterio de selección: propiedades live, con la ficha ya optimizada (Meta Score de 90% o más, todas las elegidas están entre 98% y 100%), con comisión registrada y sin ninguna acción de marketing realizada. De las 96 que cumplen ese perfil se toman las 10 de mayor comisión potencial. La lista es una propuesta del equipo de marketing, pensada para discutirse y ajustarse en la reunión.'
+          }
+        ],
+        nota: 'La lógica es concentrar el esfuerzo donde más rinde: fichas impecables que nadie ha promocionado todavía. Las 96 propiedades que cumplen el perfil suman 15,2M€ de comisión potencial, así que estas 10 son el primer corte, no el único posible.'
+      },
       {
         eyebrow: 'Detalle operativo',
         titulo: 'Cobertura de acciones de marketing',
@@ -1159,9 +1219,19 @@ function vistaLeads(r) {
 }
 
 /* --- vista 3: acciones --- */
+function elSeccion(s) {
+  let h = elSectionHead(s.eyebrow, s.titulo, true);
+  if (s.kpis) h += elKpiGrid(s.kpis);
+  (s.tablas || []).forEach(t => { h += elTablaLibre(t); });
+  if (s.nota) h += `<div class="note-block" style="margin-bottom:16px;">${esc(s.nota)}</div>`;
+  return h;
+}
 function vistaAcciones(r) {
   const a = r.acciones, id = r.id;
   let h = '';
+
+  /* secciones marcadas como 'antes' abren la pestaña */
+  (a.secciones || []).filter(s => s.antes).forEach(s => { h += elSeccion(s); });
 
   if (a.paid) {
     const g = a.paid.google, m = a.paid.meta;
@@ -1190,13 +1260,6 @@ function vistaAcciones(r) {
     (a.paid.tablas || []).forEach(t => { h += elTablaLibre(t); });
   }
 
-  /* secciones libres: {eyebrow, titulo, kpis, tablas, nota} */
-  (a.secciones || []).forEach(s => {
-    h += elSectionHead(s.eyebrow, s.titulo, true);
-    if (s.kpis) h += elKpiGrid(s.kpis);
-    (s.tablas || []).forEach(t => { h += elTablaLibre(t); });
-    if (s.nota) h += `<div class="note-block" style="margin-bottom:16px;">${esc(s.nota)}</div>`;
-  });
 
   if (a.kanban) {
     h += elSectionHead('Plan de acción', 'Acciones de Marketing | ' + r.periodo);
@@ -1210,7 +1273,7 @@ function vistaAcciones(r) {
   }
 
   if (a.destacado || a.realizadas) {
-    h += `<div style="margin-bottom:16px;margin-top:32px;"><p class="section-eyebrow">Plan de acción</p><h2 class="section-title" style="font-size:22px;">${esc(a.realizadas ? a.realizadas.titulo : 'Acciones realizadas')}</h2><hr class="section-rule" style="margin-bottom:20px;"></div>`;
+    h += `<div style="margin-bottom:16px;margin-top:32px;"><p class="section-eyebrow">Plan de acción</p><h2 class="section-title" style="font-size:22px;">${esc(a.destacadoTitulo || (a.realizadas ? a.realizadas.titulo : 'Acciones realizadas'))}</h2><hr class="section-rule" style="margin-bottom:20px;"></div>`;
   }
   if (a.destacado) {
     const d = a.destacado;
@@ -1242,6 +1305,19 @@ function vistaAcciones(r) {
             `<div class="ma-action"><span class="ma-date">${esc(x.d)}</span><span class="ma-ch ${x.c}">${esc(x.ch)}</span><span class="ma-act">${esc(x.a)}</span><span class="badge ${x.s === 'Completada' ? 'b-green' : 'b-amber'}">${esc(x.s)}</span></div>`).join('')}</div></div>`;
       }).join('')}</div>`;
   }
+  /* tableros: varios kanban con titulo propio, para separar general de local */
+  (a.tableros || []).forEach(tb => {
+    h += elSectionHead(tb.eyebrow, tb.titulo, true);
+    const colColor = { 'col-coming':'#8A8A8A', 'col-todo':'#B87820', 'col-doing':'#2060A0', 'col-done':'#2A6E20', 'col-discuss':'#E73838' };
+    h += `<div class="k-legend">${tb.columnas.map(col =>
+      `<span class="kl-item"><span class="kl-dot" style="background:${colColor[col.clase] || '#8A8A8A'};"></span>${esc(col.estado)}</span>`).join('')}</div>`;
+    h += `<div class="board" style="margin-bottom:28px;">${tb.columnas.map(col =>
+      `<div class="col ${col.clase}"><div class="col-head"><span class="col-name">${esc(col.estado)}</span><span class="col-cnt">${col.cards.length}</span></div>
+       <div class="col-body">${col.cards.map(elKCard).join('')}</div></div>`).join('')}</div>`;
+  });
+
+  (a.secciones || []).filter(s => !s.antes).forEach(s => { h += elSeccion(s); });
+
   if (!h) return `<div class="placeholder-box">${esc(a.pendiente || 'Sin acciones registradas en este periodo.')}</div>`;
   if (a.pendiente) h += `<p class="basis-note" style="margin-top:24px;margin-bottom:0;">${esc(a.pendiente)}</p>`;
   return h;
