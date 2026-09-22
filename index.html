@@ -987,50 +987,124 @@ const REPORTS = [
   label: 'Septiembre 2026',
   periodo: 'Septiembre 2026',
   activo: true,
-  fuente: 'Pendiente · export de Power BI Málaga',
+  fuente: 'Power BI Málaga · 22 septiembre 2026',
 
   cartera: {
-    liveNota: 'Cartera live en web · pendiente del export',
-    baseNota: 'Este report es la línea base de Málaga. Los datos de cartera se cargan en cuanto llegue el export de Power BI filtrado por Malaga Office y Available = Yes, el mismo que se usó para Marbella.',
+    available: [
+      { eyebrow:'Cartera Available', val:'453', sub:'propiedades disponibles totales', main:true },
+      { eyebrow:'Live', val:'377', sub:'83.2% · en comercialización' },
+      { eyebrow:'Confidential Sale', val:'62', sub:'13.7% · venta reservada' },
+      { eyebrow:'Pending', val:'14', sub:'3.1% · en preparación' }
+    ],
+    tipologia: [
+      { label:'Tipología · sobre cartera available (453)', items:[
+        { n:'Obra Nueva (ND)', v:235, pct:51.9, color:'#AE9142' },
+        { n:'Resale', v:218, pct:48.1, color:'#333138' }
+      ]},
+      { label:'Tipología · sobre live en web (377)', items:[
+        { n:'Obra Nueva (ND)', v:229, pct:60.7, color:'#AE9142' },
+        { n:'Resale', v:148, pct:39.3, color:'#333138' }
+      ]}
+    ],
+    tipologiaNota: 'La obra nueva domina la cartera live de Málaga con seis de cada diez propiedades, al revés que en Marbella. El proyecto del Higuerón concentra él solo 98 de las 453 disponibles.',
+    liveNota: 'Cartera live en web · 377 propiedades',
+    baseNota: 'Meta Score, propiedades con leads y comisión potencial quedan pendientes del export de cartera de Málaga, el mismo tipo de archivo que se usó para Marbella. El resto de cifras salen de Power BI con Office en Malaga Office y Available en Yes, a 22 de septiembre de 2026.',
     kpis: [
-      { eyebrow:'Live en web', val:'n/d', sub:'pendiente de datos' },
-      { eyebrow:'Meta Score medio', val:'n/d', sub:'objetivo: +80%' },
-      { eyebrow:'Con leads activos', val:'n/d', sub:'sobre la cartera live' },
-      { eyebrow:'Valor cartera live', val:'n/d', sub:'precio de venta' }
+      { eyebrow:'Live en web', val:'377', sub:'ND 229 · resale 148' },
+      { eyebrow:'Precio medio live', val:'1.13M€', sub:'frente a 3.37M€ en Marbella' },
+      { eyebrow:'Valor cartera live', val:'428M€', sub:'precio de venta' },
+      { eyebrow:'Venta reservada', val:'62', sub:'13.7% de la cartera available' }
     ],
     comisionKpis: [
-      { eyebrow:'Comisión potencial total', val:'n/d', sub:'sobre cartera live' },
-      { eyebrow:'Comisión con leads', val:'n/d', sub:'propiedades activas' },
-      { eyebrow:'Comisión sin leads', val:'n/d', sub:'propiedades a activar' }
+      { eyebrow:'Comisión potencial total', val:'n/d', sub:'pendiente del export' },
+      { eyebrow:'Con leads', val:'n/d', sub:'pendiente del export' },
+      { eyebrow:'Sin leads', val:'n/d', sub:'pendiente del export' }
     ],
-    metaScore: { verde:0, amarillo:0, rojo:0 },
+    metaScore: {
+      verde:0, amarillo:0, rojo:0,
+      nota:'Power BI no expone la distribución de Meta Score por pantalla. Se calcula en cuanto llegue el export de cartera de Málaga.'
+    },
+    precio: { labels:['< 1M','1M-2M','> 2M'], data:[210,128,39], colores:['#E3D5BC','#C9B688','#AE9142'] },
     leadsSplit: { con:0, sin:0 },
+    antiguedad: {
+      titulo: 'Días en mercado de la cartera live',
+      alto: 200,
+      labels:['<30','30-60','60-90','90-120','120-150','150-180','180-360','>360'],
+      data:[40,3,3,6,30,21,59,215],
+      nota:'215 de las 377 propiedades live, el 57%, llevan más de 360 días en mercado. En Marbella esa proporción es del 24%. Es el dato más duro de la cartera de Málaga.'
+    },
+    zonas: [
+      { n:'Málaga Oeste', v:145 }, { n:'Higuerón', v:98 }, { n:'Malagueta - El Limonar', v:45 },
+      { n:'Costa del Sol Oriental', v:37 }, { n:'Centro Histórico', v:34 }, { n:'Costa Tropical', v:29 },
+      { n:'Pinares de San Antón', v:18 }, { n:'Granada City y alrededores', v:15 },
+      { n:'Pedregalejo - Cerrado de Calderón', v:13 }, { n:'Mijas', v:10 }, { n:'Benalmádena', v:9 }
+    ],
+    funnel: {
+      pasos: [
+        { label:'Available', v:453 },
+        { label:'Live', v:377, pct:'83.2%' },
+        { label:'Visitas registradas', v:164 },
+        { label:'Ofertas abiertas', v:5 }
+      ],
+      nota: 'De 453 propiedades disponibles, 377 están live. Se registran 164 visitas y hay 5 ofertas abiertas: 3 sobre propiedades live y 2 sobre venta reservada. Las visitas son el total registrado, no el número de propiedades visitadas.'
+    },
+    secciones: [
+      {
+        eyebrow: 'Comparativa entre oficinas',
+        titulo: 'Málaga frente a Marbella',
+        tablas: [
+          {
+            eyebrow: 'Cartera y demanda',
+            titulo: 'Las dos oficinas al 22 de septiembre',
+            headers: ['Métrica', 'Málaga', 'Marbella', 'Lectura'],
+            destacar: 1,
+            filas: [
+              ['Cartera available', '453', '303', 'Málaga tiene un 50% más de producto'],
+              ['Propiedades live', '377', '244', 'Más inventario en comercialización'],
+              ['Precio medio live', '1.13M€', '3.37M€', 'Marbella triplica el ticket'],
+              ['Valor cartera live', '428M€', '821M€', 'Marbella casi dobla en valor'],
+              ['Obra nueva sobre live', '61%', '44%', 'Málaga es mercado de obra nueva'],
+              ['Venta reservada', '62', '5', 'Málaga opera mucho más en confidencial'],
+              ['Más de 360 días en mercado', '57%', '24%', 'Cartera de Málaga mucho más antigua'],
+              ['Leads 2026', '1.263', '418', 'Málaga triplica la demanda'],
+              ['Ofertas abiertas', '5', '1', 'Pipeline más activo en Málaga']
+            ],
+            nota: 'Son dos negocios distintos dentro de la misma región. Marbella es ticket alto y baja rotación; Málaga es volumen, obra nueva y precio medio. Compararlas en una sola cifra no tiene sentido, pero verlas juntas ayuda a repartir esfuerzo y presupuesto.'
+          }
+        ]
+      }
+    ],
     contexto: {
       eyebrow: 'Contexto',
-      titulo: 'Primer report de Málaga',
-      narrativa: ['Septiembre es el <strong>primer report de la oficina de Málaga</strong> y marca la línea base sobre la que mediremos la evolución. La oficina se inauguró el 16 de septiembre, así que este periodo recoge el arranque.']
+      titulo: 'Primer report de Málaga · línea base',
+      narrativa: [
+        'Septiembre es el <strong>primer report de la oficina de Málaga</strong> y marca la línea base sobre la que mediremos la evolución. La oficina se inauguró el 16 de septiembre, aunque la cartera y los leads vienen operando durante todo el año dentro de Costa del Sol.',
+        '<strong>El retrato es el de una cartera grande y envejecida.</strong> 453 propiedades disponibles, 377 live y un precio medio de 1,13M€, la tercera parte del de Marbella. Pero 215 de esas 377, el 57%, llevan más de 360 días en mercado, y solo 40 han entrado en los últimos 30 días.',
+        '<strong>La demanda llega por un camino muy distinto al de Marbella.</strong> Los portales aportan el 80% de los leads (54% nacionales y 25,8% internacionales) mientras la web propia se queda en el 18,7%. En Marbella la web es el 61,6%. Cualquier acción que funcione en una oficina no se puede trasladar a la otra sin repensarla.'
+      ]
     }
   },
 
   leads: {
     kpis: [
-      { eyebrow:'Sesiones web', val:'981', sub:'julio a septiembre', accent:true },
-      { eyebrow:'Zonas con tráfico', val:'7', sub:'subzonas identificadas' },
-      { eyebrow:'Total leads 2026', val:'n/d', sub:'pendiente de Power BI' },
-      { eyebrow:'Canal principal', val:'n/d', sub:'pendiente de Power BI' }
+      { eyebrow:'Total leads 2026', val:'1.263', sub:'acumulado al 22 septiembre', accent:true },
+      { eyebrow:'Canal principal', val:'Portales', sub:'79.8% de los leads' },
+      { eyebrow:'Mejor mes', val:'Agosto', sub:'178 enquiries' },
+      { eyebrow:'Variación interanual', val:'-24.2%', sub:'frente al mismo periodo' }
     ],
-    mensual: { labels:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep'], data:[0,0,0,0,0,0,0,0,0] },
+    mensual: { labels:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep'], data:[135,141,154,147,141,120,152,178,95] },
     groupPath: [
-      { n:'LF Website', leads:0, pct:'n/d', color:'#AE9142' },
-      { n:'National Portal', leads:0, pct:'n/d', color:'#333138' },
-      { n:'International Portal', leads:0, pct:'n/d', color:'#8C877E' },
-      { n:'Offline', leads:0, pct:'n/d', color:'#D7D1C7' }
+      { n:'National Portal', leads:682, pct:'54.00%', color:'#AE9142' },
+      { n:'International Portal', leads:326, pct:'25.81%', color:'#333138' },
+      { n:'LF Website', leads:236, pct:'18.69%', color:'#8C877E' },
+      { n:'Offline', leads:19, pct:'1.50%', color:'#D7D1C7' }
     ],
     webPath: [
-      { n:'Paid', leads:0, pct:'n/d', color:'#AE9142' },
-      { n:'Organic & Direct', leads:0, pct:'n/d', color:'#8C877E' },
-      { n:'Email', leads:0, pct:'n/d', color:'#333138' }
+      { n:'Organic & Direct', leads:164, pct:'69.5%', color:'#8C877E' },
+      { n:'Paid', leads:49, pct:'20.8%', color:'#AE9142' },
+      { n:'Email', leads:23, pct:'9.7%', color:'#333138' }
     ],
+    webPathNota: 'Dentro de la web propia manda el orgánico con el 69,5%, justo al revés que en Marbella, donde paid se lleva el 61,5%. Málaga apenas recibe 49 leads de paid en todo el año, lo que deja mucho margen si se decide invertir.',
     secciones: [
       {
         eyebrow: 'Tráfico web',
@@ -1045,28 +1119,28 @@ const REPORTS = [
           {
             eyebrow: 'Detalle',
             titulo: 'Sesiones por subzona',
-            headers: ['Zona', 'Sesiones', '% sobre zonas identificadas'],
+            headers: ['Zona', 'Sesiones', '% sobre zonas identificadas', 'Propiedades en cartera'],
             destacar: 1,
             filas: [
-              ['Pinares de San Antón - El Candado', '23', '23.5%'],
-              ['Malagueta - El Limonar', '18', '18.4%'],
-              ['Centro de Málaga', '14', '14.3%'],
-              ['Axarquía', '13', '13.3%'],
-              ['Málaga Oeste', '11', '11.2%'],
-              ['Pedregalejo - Cerrado de Calderón', '10', '10.2%'],
-              ['El Higerón', '9', '9.2%']
+              ['Pinares de San Antón - El Candado', '23', '23.5%', '18'],
+              ['Malagueta - El Limonar', '18', '18.4%', '45'],
+              ['Centro de Málaga', '14', '14.3%', '34'],
+              ['Axarquía', '13', '13.3%', 'n/d'],
+              ['Málaga Oeste', '11', '11.2%', '145'],
+              ['Pedregalejo - Cerrado de Calderón', '10', '10.2%', '13'],
+              ['El Higuerón', '9', '9.2%', '98']
             ],
-            total: ['Total con zona asignada', '98', '100%'],
-            nota: 'Málaga genera 981 sesiones frente a las 142 de Marbella en el mismo periodo, casi siete veces más tráfico. Solo 98 de esas sesiones tienen zona asignada, así que el desglose cubre el 10% del total y hay que leerlo como muestra, no como reparto completo.'
+            total: ['Total con zona asignada', '98', '100%', ''],
+            nota: 'El desajuste se repite igual que en Marbella pero en otras zonas: Málaga Oeste concentra 145 propiedades, casi un tercio de la cartera, y solo recibe 11 sesiones. El Higuerón, con 98 propiedades, recibe 9. En cambio Pinares de San Antón atrae 23 sesiones con solo 18 propiedades.'
           }
         ],
-        nota: 'Datos aportados por el equipo digital. Pendiente cruzarlos contra el inventario por zona cuando llegue el export de cartera de Málaga.'
+        nota: 'Las sesiones las aporta el equipo digital y cubren de julio a septiembre. Solo 98 de las 981 tienen zona asignada, así que el desglose es una muestra del 10%. Las cifras de cartera son sobre las 453 propiedades disponibles.'
       }
     ]
   },
 
   acciones: {
-    pendiente: 'Pendientes los datos de cartera, leads y paid de Málaga. Las acciones de Costa del Sol que aparecen aquí son regionales, así que se reportan también en Marbella.',
+    pendiente: 'Pendiente el detalle de paid de Málaga. La campaña de Meta DLF-09-010 es compartida MRB+MLG, así que su inversión no es atribuible solo a una oficina.',
     destacadoTitulo: 'Acción destacada del periodo',
     destacado: {
       eyebrow: 'Hito · Apertura de oficina',
@@ -1074,8 +1148,8 @@ const REPORTS = [
       items: [
         { b:'El hito del trimestre', t:': la oficina abre y con ella arranca la medición propia de Málaga, que hasta ahora viajaba dentro de Costa del Sol.' },
         { b:'Cobertura en prensa', t:': 6 publicaciones en periódicos acompañaron el lanzamiento en la región.' },
-        { b:'Tráfico web', t:': 981 sesiones en el periodo, casi siete veces las de Marbella, con el foco en Pinares de San Antón, Malagueta y el centro.' },
-        { b:'Siguiente paso', t:': cargar cartera, leads y paid de Málaga para tener la foto completa y poder comparar las dos oficinas.' }
+        { b:'Base de partida', t:': 453 propiedades disponibles, 1.263 leads en el año y 981 sesiones web en el trimestre.' },
+        { b:'El frente abierto', t:': el 57% de la cartera live lleva más de 360 días en mercado y la web propia solo aporta el 18,7% de los leads.' }
       ]
     },
     tableros: [
@@ -1098,7 +1172,8 @@ const REPORTS = [
           { estado:'Realizadas', clase:'col-done', cards:[
             { t:'Inauguración de la oficina de Málaga', m:'16 de septiembre', tags:[{c:'kt-offline',l:'Evento'}], pri:{clase:'p-alta',l:'Destacado'} },
             { t:'6 publicaciones en prensa', m:'Costa del Sol', tags:[{c:'kt-prensa',l:'Prensa'}] },
-            { t:'Campaña Meta de branding MRB+MLG', m:'Compartida con Marbella', tags:[{c:'kt-paid',l:'Paid Media'}] }
+            { t:'Campaña Meta de branding MRB+MLG', m:'Compartida con Marbella', tags:[{c:'kt-paid',l:'Paid Media'}] },
+            { t:'Alertas de propiedad por email', m:'109.334 envíos · 7.22% de clics sobre aperturas', tags:[{c:'kt-email',l:'Email'}] }
           ]},
           { estado:'Coming Up', clase:'col-coming', cards:[
             { t:'Mini informe · nota de prensa', m:'Martes 29 de septiembre', tags:[{c:'kt-prensa',l:'Prensa'}] },
@@ -1106,6 +1181,19 @@ const REPORTS = [
             { t:'Mini informe · post en redes', m:'Martes 29 de septiembre', tags:[{c:'kt-social',l:'RRSS'}] }
           ]}
         ]
+      }
+    ],
+    secciones: [
+      {
+        eyebrow: 'Email marketing',
+        titulo: 'Alertas de propiedad',
+        kpis: [
+          { eyebrow:'Envíos', val:'109.334', sub:'destinatarios en el periodo', accent:true },
+          { eyebrow:'Aperturas', val:'61.422', sub:'56.2% de los envíos' },
+          { eyebrow:'Clics', val:'4.434', sub:'7.22% sobre aperturas' },
+          { eyebrow:'Referencia Marbella', val:'6.171', sub:'envíos en el mismo periodo' }
+        ],
+        nota: 'Málaga manda casi dieciocho veces más alertas que Marbella y mantiene un ratio de clics sobre aperturas prácticamente igual, 7,22% frente a 7,41%. Es el canal con más volumen de la oficina y encaja con una cartera de ticket medio y mucho producto.'
       }
     ]
   }
@@ -1228,9 +1316,11 @@ function vistaCartera(r) {
     { color:'#AE9142', txt:`Rojo <60% · ${ms.rojo}` }
   ];
   if (ms.sinCalcular) msLeyenda.push({ color:'#D7D1C7', txt:`Sin Meta Score · ${ms.sinCalcular}` });
+  /* si todavía no hay datos, el donut se sustituye por un aviso */
+  const msHayDatos = (ms.verde + ms.amarillo + ms.rojo + (ms.sinCalcular || 0)) > 0;
   const cardMeta = `<div class="card"><p class="card-eyebrow">Distribución</p><p class="card-title">Meta Score</p>
-    ${elLeyenda(msLeyenda)}
-    <div style="position:relative;height:190px;"><canvas id="${id}-metaChart"></canvas></div>
+    ${msHayDatos ? elLeyenda(msLeyenda) + `<div style="position:relative;height:190px;"><canvas id="${id}-metaChart"></canvas></div>`
+                 : '<div class="placeholder-box" style="padding:36px;">Pendiente del export de cartera</div>'}
     ${ms.nota ? `<div class="note-block" style="margin-top:14px;">${esc(ms.nota)}</div>` : ''}</div>`;
 
   /* BLOQUE 2 · calidad de ficha y precio */
@@ -1276,11 +1366,13 @@ function vistaCartera(r) {
   /* BLOQUE 5 · actividad comercial */
   h += elSectionHead('Actividad', 'Qué se está moviendo y qué no', true);
   const ls = c.leadsSplit, tot = ls.con + ls.sin;
-  const barras = `<div class="stat-row"><span class="stat-name">Sin leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:${(ls.sin / tot * 100).toFixed(1)}%;background:var(--neg);"></div></div><span class="stat-num">${ls.sin}</span></div>
-    <div class="stat-row"><span class="stat-name">Con leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:${(ls.con / tot * 100).toFixed(1)}%;background:var(--pos);"></div></div><span class="stat-num">${ls.con}</span></div>`;
-  h += `<div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Actividad</p><p class="card-title">Propiedades con leads vs. sin leads</p>
-    <div style="margin-bottom:18px;">${barras}</div>
-    ${c.topLeadsChart ? `<div style="position:relative;height:160px;"><canvas id="${id}-leadsBarChart"></canvas></div>` : ''}</div>`;
+  if (tot > 0) {
+    const barras = `<div class="stat-row"><span class="stat-name">Sin leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:${(ls.sin / tot * 100).toFixed(1)}%;background:var(--neg);"></div></div><span class="stat-num">${ls.sin}</span></div>
+      <div class="stat-row"><span class="stat-name">Con leads</span><div class="stat-bar-bg"><div class="stat-bar" style="width:${(ls.con / tot * 100).toFixed(1)}%;background:var(--pos);"></div></div><span class="stat-num">${ls.con}</span></div>`;
+    h += `<div class="card" style="margin-bottom:16px;"><p class="card-eyebrow">Actividad</p><p class="card-title">Propiedades con leads vs. sin leads</p>
+      <div style="margin-bottom:18px;">${barras}</div>
+      ${c.topLeadsChart ? `<div style="position:relative;height:160px;"><canvas id="${id}-leadsBarChart"></canvas></div>` : ''}</div>`;
+  }
 
   if (c.topLeads || c.antiguedad) {
     h += `<div class="grid-2">
@@ -1288,7 +1380,7 @@ function vistaCartera(r) {
         <table class="data-table"><thead><tr><th>Ref.</th><th>Precio</th><th>% Com.</th><th>Enq.</th><th>Días</th><th>Meta</th></tr></thead><tbody>
         ${c.topLeads.map(t => `<tr><td>${esc(t.ref)}</td><td>${esc(t.precio)}</td><td>${esc(t.com)}</td><td>${t.enq}</td><td>${t.dias}</td><td><span class="badge ${t.metaClase}">${esc(t.meta)}</span></td></tr>`).join('')}
         </tbody></table></div>` : ''}
-      ${c.antiguedad ? `<div class="card"><p class="card-eyebrow">Antigüedad</p><p class="card-title">Más tiempo en mercado</p><div style="position:relative;height:140px;"><canvas id="${id}-oldChart"></canvas></div></div>` : ''}
+      ${c.antiguedad ? `<div class="card"><p class="card-eyebrow">Antigüedad</p><p class="card-title">${esc(c.antiguedad.titulo || 'Más tiempo en mercado')}</p><div style="position:relative;height:${c.antiguedad.alto || 140}px;"><canvas id="${id}-oldChart"></canvas></div>${c.antiguedad.nota ? `<div class="note-block" style="margin-top:14px;">${esc(c.antiguedad.nota)}</div>` : ''}</div>` : ''}
     </div>`;
   }
   if (c.alertas) {
