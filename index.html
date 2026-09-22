@@ -279,6 +279,7 @@ const REPORTS = [
 
   cartera: {
     liveNota: 'Cartera live en web · 182 propiedades',
+    baseNota: 'Aviso sobre la serie mensual de este report: los valores de enero a abril (29, 26, 93 y 58) suman 206 y no cuadran con el total de 185 leads que aparece arriba. La serie buena, comprobada después en el Enquiries Dashboard de Power BI, es 4, 8, 95 y 74, que acumula 181. Se conservan las cifras originales porque este report ya se presentó, pero para cualquier comparación se usa la serie de Power BI.',
     kpis: [
       { eyebrow:'Live en web', val:'182', sub:'propiedades live' },
       { eyebrow:'Meta Score medio', val:'51.4%', sub:'objetivo: +80%' },
@@ -1003,8 +1004,8 @@ const REPORTS = [
         kpis: [
           { eyebrow:'Propiedades con acciones', val:'71', sub:'de 244 live · 29%' },
           { eyebrow:'Sin ninguna acción', val:'173', sub:'71% de la cartera live', accent:true },
-          { eyebrow:'Acciones completadas', val:'203', sub:'histórico acumulado' },
-          { eyebrow:'Acciones activas', val:'23', sub:'en curso ahora' }
+          { eyebrow:'Acciones sobre cartera live', val:'226', sub:'203 completadas · 23 activas' },
+          { eyebrow:'Media por propiedad', val:'3.2', sub:'acciones por propiedad trabajada' }
         ],
         tablas: [
           {
@@ -1193,10 +1194,10 @@ const REPORTS = [
               ['Obra nueva sobre live', '61%', '44%', 'Málaga es mercado de obra nueva'],
               ['Venta reservada', '62', '5', 'Málaga opera mucho más en confidencial'],
               ['Más de 360 días en mercado', '57%', '24%', 'Cartera de Málaga mucho más antigua'],
-              ['Leads 2026', '1.263', '418', 'Málaga triplica la demanda'],
+              ['Leads 2026', '1.263', '417', 'Málaga triplica la demanda'],
               ['Ofertas abiertas', '5', '1', 'Pipeline más activo en Málaga']
             ],
-            nota: 'Son dos negocios distintos dentro de la misma región. Marbella es ticket alto y baja rotación; Málaga es volumen, obra nueva y precio medio. Compararlas en una sola cifra no tiene sentido, pero verlas juntas ayuda a repartir esfuerzo y presupuesto.'
+            nota: 'Cifras de cada oficina a la fecha de su propio report: Marbella a 21 de septiembre y Málaga a 22. Son dos negocios distintos dentro de la misma región. Marbella es ticket alto y baja rotación; Málaga es volumen, obra nueva y precio medio. Compararlas en una sola cifra no tiene sentido, pero verlas juntas ayuda a repartir esfuerzo y presupuesto.'
           }
         ]
       }
@@ -1370,8 +1371,8 @@ const REPORTS = [
         kpis: [
           { eyebrow:'Propiedades con acciones', val:'49', sub:'de 377 live · 13%' },
           { eyebrow:'Sin ninguna acción', val:'328', sub:'87% de la cartera live', accent:true },
-          { eyebrow:'Acciones registradas', val:'111', sub:'85 completadas · 26 activas' },
-          { eyebrow:'Referencia Marbella', val:'29%', sub:'de su cartera live tiene acciones' }
+          { eyebrow:'Acciones sobre cartera live', val:'108', sub:'83 completadas · 25 activas' },
+          { eyebrow:'Media por propiedad', val:'2.2', sub:'frente a 3.2 en Marbella' }
         ],
         tablas: [
           {
