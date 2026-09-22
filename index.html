@@ -688,11 +688,61 @@ const REPORTS = [
       { n:'Organic & Direct', leads:84, pct:'32.7%', color:'#8AAAD4' },
       { n:'Email', leads:15, pct:'5.8%', color:'#1A1A1A' }
     ],
-    webPathNota: 'Paid sigue siendo el motor del canal web pero cede terreno: 61,5% frente al 65% de julio. El orgánico recupera peso (32,7% frente a 28,1%). Septiembre va con 18 leads a día 21, por debajo del ritmo de julio y agosto.'
+    webPathNota: 'Paid sigue siendo el motor del canal web pero cede terreno: 61,5% frente al 65% de julio. El orgánico recupera peso (32,7% frente a 28,1%). Septiembre va con 18 leads a día 21, por debajo del ritmo de julio y agosto.',
+    secciones: [
+      {
+        eyebrow: 'Tráfico web',
+        titulo: 'Sesiones por zona',
+        kpis: [
+          { eyebrow:'Sesiones Marbella', val:'142', sub:'julio a septiembre', accent:true },
+          { eyebrow:'Sesiones Málaga', val:'981', sub:'referencia Costa del Sol' },
+          { eyebrow:'Zonas con tráfico', val:'10', sub:'subzonas identificadas' },
+          { eyebrow:'Sesiones con zona', val:'50', sub:'35% del tráfico de Marbella' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Cruce',
+            titulo: 'Tráfico web frente a inventario',
+            headers: ['Zona', 'Sesiones', 'Propiedades en cartera', 'Lectura'],
+            destacar: 1,
+            filas: [
+              ['San Pedro de Alcántara', '16', '11', 'Demanda por encima del stock'],
+              ['Milla de Oro', '14', '24', 'Equilibrada'],
+              ['Sierra Blanca', '5', 'n/d', 'Sin datos de cartera'],
+              ['Nueva Andalucía', '4', '38', 'Mucho stock, poco tráfico'],
+              ['Marbella Este', '3', '70', 'El mayor desajuste'],
+              ['Guadalmina', '2', '3', 'Equilibrada'],
+              ['Marbella centro', '2', 'n/d', 'Sin datos de cartera'],
+              ['Puerto Banús', '2', '5', 'Equilibrada'],
+              ['Artola', '1', 'n/d', 'Sin datos de cartera'],
+              ['Nagüeles', '1', '5', 'Poco tráfico']
+            ],
+            total: ['Total con zona asignada', '50', '', ''],
+            nota: 'Marbella Este concentra 70 propiedades de la cartera, casi una de cada cuatro, y solo recibe 3 sesiones. Nueva Andalucía repite el patrón con 38 propiedades y 4 sesiones. En el otro extremo, San Pedro de Alcántara atrae más tráfico del que su inventario justifica. Es el mismo mensaje que sale de la cobertura de acciones: el stock está donde no está la demanda de la web.'
+          }
+        ],
+        nota: 'Las subzonas suman 50 de las 142 sesiones de Marbella; el resto del tráfico no tiene zona asignada. Las cifras de cartera son sobre las 303 propiedades disponibles y las de tráfico las aporta el equipo digital. Málaga se incluye solo como referencia regional.'
+      }
+    ]
   },
 
   acciones: {
-    pendiente: 'Cobertura calculada con las columnas de acciones del export de cartera, que solo traen el recuento por propiedad. Pendiente el listado detallado de acciones del periodo por canal y responsable.',
+    pendiente: 'La cobertura por propiedad se calcula con las columnas de acciones del export de cartera, que solo traen el recuento. Faltan los responsables de cada acción del periodo.',
+    kanban: [
+      { estado:'Realizadas', clase:'col-done', cards:[
+        { t:'Informe de Propiedades a un clic', m:'Nueva herramienta de la web', tags:[{c:'kt-portal',l:'Producto'}] },
+        { t:'Buscador con IA en la web', m:'Nueva funcionalidad', tags:[{c:'kt-portal',l:'Producto'}] },
+        { t:'Informe de obra nueva para promotores', m:'Herramienta comercial', tags:[{c:'kt-portal',l:'Producto'}] },
+        { t:'Partnership con Gunni & Trentino', m:'Acuerdo de marca', tags:[{c:'kt-prensa',l:'Marca'}] },
+        { t:'Inauguración de la oficina de Málaga', m:'16 de septiembre', tags:[{c:'kt-offline',l:'Evento'}] },
+        { t:'6 publicaciones en prensa', m:'Costa del Sol', tags:[{c:'kt-prensa',l:'Prensa'}] }
+      ]},
+      { estado:'Coming Up', clase:'col-coming', cards:[
+        { t:'Mini informe · nota de prensa', m:'Martes 29 de septiembre', tags:[{c:'kt-prensa',l:'Prensa'}] },
+        { t:'Mini informe · email a base de datos', m:'Martes 29 de septiembre', tags:[{c:'kt-email',l:'Email'}] },
+        { t:'Mini informe · post en redes', m:'Martes 29 de septiembre', tags:[{c:'kt-social',l:'RRSS'}] }
+      ]}
+    ],
     paid: {
       titulo: 'Paid Media · 1 julio a 21 septiembre',
       google: {
@@ -1098,6 +1148,13 @@ function vistaLeads(r) {
       </tbody></table>
       ${cp.nota ? `<div class="note-block" style="margin-top:16px;">${esc(cp.nota)}</div>` : ''}</div>`;
   }
+
+  (l.secciones || []).forEach(s => {
+    h += elSectionHead(s.eyebrow, s.titulo, true);
+    if (s.kpis) h += elKpiGrid(s.kpis);
+    (s.tablas || []).forEach(t => { h += elTablaLibre(t); });
+    if (s.nota) h += `<div class="note-block" style="margin-bottom:16px;">${esc(s.nota)}</div>`;
+  });
   return h;
 }
 
@@ -1143,9 +1200,10 @@ function vistaAcciones(r) {
 
   if (a.kanban) {
     h += elSectionHead('Plan de acción', 'Acciones de Marketing | ' + r.periodo);
-    h += `<div class="k-legend">${[
-      ['#8A8A8A','Coming Up'], ['#B87820','To Do'], ['#2060A0','Doing'], ['#2A6E20','Done'], ['#E73838','In Discussion']
-    ].map(x => `<span class="kl-item"><span class="kl-dot" style="background:${x[0]};"></span>${x[1]}</span>`).join('')}</div>`;
+    /* la leyenda se construye con las columnas que realmente tiene el mes */
+    const colColor = { 'col-coming':'#8A8A8A', 'col-todo':'#B87820', 'col-doing':'#2060A0', 'col-done':'#2A6E20', 'col-discuss':'#E73838' };
+    h += `<div class="k-legend">${a.kanban.map(col =>
+      `<span class="kl-item"><span class="kl-dot" style="background:${colColor[col.clase] || '#8A8A8A'};"></span>${esc(col.estado)}</span>`).join('')}</div>`;
     h += `<div class="board">${a.kanban.map(col =>
       `<div class="col ${col.clase}"><div class="col-head"><span class="col-name">${esc(col.estado)}</span><span class="col-cnt">${col.cards.length}</span></div>
        <div class="col-body">${col.cards.map(elKCard).join('')}</div></div>`).join('')}</div>`;
