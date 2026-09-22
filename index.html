@@ -392,7 +392,7 @@ const REPORTS = [
       { eyebrow:'Comisión sin leads', val:'14.9M€', sub:'133 prop. a activar' }
     ],
     metaScore: { verde:73, amarillo:27, rojo:82 },
-    precio: { labels:['< 1M','1M-2M','> 2M'], data:[42,70,70], colores:['#E3D5BC','#C9B688','#8C877E'] },
+    precio: { labels:['< 1M','1M-2M','> 2M'], data:[42,70,70], colores:['#E3D5BC','#C9B688','#AE9142'] },
     leadsSplit: { con:49, sin:133 },
     topLeadsChart: {
       labels:['MRB66691','MRB66238','MRB67266','EST62060','MRB66599'],
@@ -512,7 +512,7 @@ const REPORTS = [
           { eyebrow:'Clics', val:'7.173', sub:'tráfico generado' },
           { eyebrow:'CPC medio', val:'0.72€', sub:'coste por clic' }
         ],
-        chart: { labels:['ND / Kristina','Resale Buyers','Resale Sellers'], data:[19,7,1], colores:['#AE9142','#AE9142','#B08B3E'] }
+        chart: { labels:['ND / Kristina','Resale Buyers','Resale Sellers'], data:[19,7,1], colores:['#AE9142','#333138','#B08B3E'] }
       },
       meta: {
         titulo: 'Rendimiento por campaña',
@@ -643,7 +643,7 @@ const REPORTS = [
       verde:182, amarillo:1, rojo:1, sinCalcular:60,
       nota:'Power BI solo calcula Meta Score para 184 de las 244 live. Los 60 proyectos de obra nueva restantes no tienen puntuación asignada, así que no entran ni en verde ni en rojo.'
     },
-    precio: { labels:['< 1M','1M-2M','> 2M'], data:[79,49,116], colores:['#E3D5BC','#C9B688','#8C877E'] },
+    precio: { labels:['< 1M','1M-2M','> 2M'], data:[79,49,116], colores:['#E3D5BC','#C9B688','#AE9142'] },
     leadsSplit: { con:92, sin:152 },
     topLeadsChart: {
       labels:['Kristina Views','MRB66691','MRB66238','Medblue','MRB16833'],
@@ -798,7 +798,83 @@ const REPORTS = [
   },
 
   acciones: {
-    pendiente: 'La cobertura por propiedad se calcula con las columnas de acciones del export de cartera, que solo traen el recuento. Faltan los responsables de cada acción del periodo.',
+    pendiente: 'Faltan los responsables de cada acción del periodo. El detalle por propiedad cubre 74 propiedades de la cartera available; la cobertura de más abajo se mide solo sobre las 244 live.',
+    marketingActions: [
+  {ref:'MRB70204',acc:[{d:'18/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'18/06/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'18/06/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'18/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'19/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB70173',acc:[{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'15/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB70209',acc:[{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'28/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB70199',acc:[{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'Kristina-Views',acc:[{d:'13/02/2026',c:'kt-portal',ch:'Portales',a:'nd published idealista',s:'Completada'},{d:'26/02/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'04/03/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'07/04/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'27/05/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'27/05/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'26/06/2026',c:'kt-portal',ch:'Web',a:'Vídeo de renders',s:'Completada'},{d:'26/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'26/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'}]},
+  {ref:'MRB66566',acc:[{d:'24/03/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/03/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'02/04/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'06/04/2026',c:'kt-social',ch:'RRSS',a:'Instagram Local',s:'Completada'},{d:'25/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'26/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB66608',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'29/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'19/08/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'}]},
+  {ref:'MRB66084',acc:[{d:'20/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'21/05/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global · Golf Villas',s:'Completada'},{d:'03/06/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'04/06/2026',c:'kt-social',ch:'RRSS',a:'LinkedIn',s:'Completada'},{d:'04/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'},{d:'11/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB68629',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'30/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB69150',acc:[{d:'18/05/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'18/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB70540',acc:[{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'07/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'07/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'06/08/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'}]},
+  {ref:'MRB39094',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'03/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB68484',acc:[{d:'24/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'25/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB69883',acc:[{d:'10/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'10/07/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://www.expansion.com/directivos/estilo-vida/casas/2026/07/10/6a4fad0b468aeb58368b4576.html',s:'Completada'},{d:'10/07/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://es.headtopics.com/news/c-mo-el-diseno-inmobiliario-consigue-frenar-el-calor-extremo-85427053',s:'Completada'},{d:'10/07/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansion papel',s:'Completada'}]},
+  {ref:'MRB71934',acc:[{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'},{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/08/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'},{d:'27/08/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'}]},
+  {ref:'MRB34927',acc:[{d:'07/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'01/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'01/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB66572',acc:[{d:'26/02/2026',c:'kt-email',ch:'Email',a:'Newsletter · Signature Club',s:'Completada'},{d:'24/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'28/04/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB72329',acc:[{d:'05/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'25/08/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'},{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'05/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB66358',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'03/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'EST66195',acc:[{d:'24/02/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'24/02/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'28/04/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'28/04/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB68887',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'10/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'}]},
+  {ref:'EST64633',acc:[{d:'12/03/2026',c:'kt-social',ch:'RRSS',a:'LinkedIn',s:'Completada'},{d:'12/03/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'25/04/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://www.ft.com/content/fb3c20da-1425-4d21-abe0-f391ad1a2c04',s:'Completada'},{d:'25/04/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · FT print',s:'Completada'}]},
+  {ref:'EST59890',acc:[{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'09/07/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global · New Developments Costa del Sol',s:'Completada'},{d:'24/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'}]},
+  {ref:'MRB67103',acc:[{d:'14/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'14/05/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'14/05/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global · 2M€ Post',s:'Completada'},{d:'14/05/2026',c:'kt-social',ch:'RRSS',a:'LinkedIn',s:'Completada'}]},
+  {ref:'theavenue',acc:[{d:'28/01/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'12/02/2026',c:'kt-email',ch:'Email',a:'Newsletter · Signature Club',s:'Completada'},{d:'24/02/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB67364',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'31/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'MRB62958',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'25/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'}]},
+  {ref:'MRB43250',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'31/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'MRB68150',acc:[{d:'21/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'22/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'MRB33782',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB69892',acc:[{d:'10/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'}]},
+  {ref:'MRB25473',acc:[{d:'10/06/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'},{d:'15/06/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'}]},
+  {ref:'MRB72328',acc:[{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MRB72051',acc:[{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Activa'}]},
+  {ref:'MRB71971',acc:[{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Activa'}]},
+  {ref:'MRB72069',acc:[{d:'25/08/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'},{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB68602',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB40748',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB67197',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB70777',acc:[{d:'15/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'15/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB69049',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB70829',acc:[{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'},{d:'03/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Activa'}]},
+  {ref:'MRB65912',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB66691',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB72278',acc:[{d:'30/07/2026',c:'kt-social',ch:'RRSS',a:'LinkedIn',s:'Completada'},{d:'30/07/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'}]},
+  {ref:'MRB69135',acc:[{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'}]},
+  {ref:'MRB66238',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'EST60429',acc:[{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Completada'},{d:'09/07/2026',c:'kt-paid',ch:'Paid Media',a:'Google Ads',s:'Completada'}]},
+  {ref:'MRB72197',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72250',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72251',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72098',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72331',acc:[{d:'05/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'}]},
+  {ref:'EST62548',acc:[{d:'23/02/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'}]},
+  {ref:'EST65280',acc:[{d:'09/01/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'}]},
+  {ref:'MRB72174',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72181',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB72057',acc:[{d:'03/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Completada'}]},
+  {ref:'MRB72152',acc:[{d:'14/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'}]},
+  {ref:'MRB66598',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'MRB67102',acc:[{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB67121',acc:[{d:'31/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Rightmove',s:'Completada'}]},
+  {ref:'MRB62955',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'MRB68264',acc:[{d:'20/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MRB67362',acc:[{d:'30/04/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MRB33928',acc:[{d:'02/06/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales',s:'Completada'}]},
+  {ref:'El-Bosque-II',acc:[{d:'24/02/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB66591',acc:[{d:'28/05/2026',c:'kt-email',ch:'Email',a:'Newsletter · Signature Club',s:'Completada'}]},
+  {ref:'EST62469',acc:[{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB72459',acc:[{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'Marina-Golden-Bay',acc:[{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'ISLABELA',acc:[{d:'24/03/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MRB66353',acc:[{d:'30/04/2026',c:'kt-email',ch:'Email',a:'Newsletter · Signature Club',s:'Completada'}]},
+  {ref:'Benahavis-Sky-Villas',acc:[{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]}
+    ],
     destacadoTitulo: 'Acción destacada del periodo',
     destacado: {
       eyebrow: 'Caso destacado · Auditoría de obra nueva',
@@ -859,7 +935,7 @@ const REPORTS = [
         chart: {
           labels:['Obra Nueva', 'Resale Buyers', 'Resale Sellers', 'Branding'],
           data:[24.8, 15.3, 0, 0],
-          colores:['#AE9142','#AE9142','#B08B3E','#8C877E']
+          colores:['#AE9142','#333138','#B08B3E','#D7D1C7']
         },
         nota: 'La obra nueva se lleva casi la mitad de la inversión y genera el 62% de los leads. Resale sellers y branding no trajeron ni un solo lead en todo el trimestre.'
       },
@@ -1008,24 +1084,42 @@ const REPORTS = [
     ],
     tipologiaNota: 'La obra nueva domina la cartera live de Málaga con seis de cada diez propiedades, al revés que en Marbella. El proyecto del Higuerón concentra él solo 98 de las 453 disponibles.',
     liveNota: 'Cartera live en web · 377 propiedades',
-    baseNota: 'Meta Score, propiedades con leads y comisión potencial quedan pendientes del export de cartera de Málaga, el mismo tipo de archivo que se usó para Marbella. El resto de cifras salen de Power BI con Office en Malaga Office y Available en Yes, a 22 de septiembre de 2026.',
+    baseNota: 'Todas las cifras salen del export de cartera de Málaga y de Power BI con Office en Malaga Office y Available en Yes, a 22 de septiembre de 2026. La comisión potencial se calcula sobre las 377 live; a diferencia de Marbella, aquí no hubo porcentajes corruptos que excluir.',
     kpis: [
       { eyebrow:'Live en web', val:'377', sub:'ND 229 · resale 148' },
-      { eyebrow:'Precio medio live', val:'1.13M€', sub:'frente a 3.37M€ en Marbella' },
-      { eyebrow:'Valor cartera live', val:'428M€', sub:'precio de venta' },
-      { eyebrow:'Venta reservada', val:'62', sub:'13.7% de la cartera available' }
+      { eyebrow:'Meta Score medio', val:'78.9%', sub:'sobre las 377 live · objetivo +80%' },
+      { eyebrow:'Con leads activos', val:'200', sub:'53% de la cartera live' },
+      { eyebrow:'Valor cartera live', val:'428M€', sub:'precio medio de 1.13M€' }
     ],
     comisionKpis: [
-      { eyebrow:'Comisión potencial total', val:'n/d', sub:'pendiente del export' },
-      { eyebrow:'Con leads', val:'n/d', sub:'pendiente del export' },
-      { eyebrow:'Sin leads', val:'n/d', sub:'pendiente del export' }
+      { eyebrow:'Comisión potencial total', val:'23.5M€', sub:'al 5.50% ponderado' },
+      { eyebrow:'Comisión con leads', val:'12.4M€', sub:'200 propiedades activas' },
+      { eyebrow:'Comisión sin leads', val:'11.1M€', sub:'177 prop. a activar' }
     ],
     metaScore: {
-      verde:0, amarillo:0, rojo:0,
-      nota:'Power BI no expone la distribución de Meta Score por pantalla. Se calcula en cuanto llegue el export de cartera de Málaga.'
+      verde:309, amarillo:2, rojo:2, sinCalcular:64,
+      nota:'Power BI puntúa 313 de las 377 live y de esas 309 están en verde, con una media del 95%. Las 64 restantes son proyectos de obra nueva sin puntuación asignada, el mismo punto ciego que en Marbella.'
     },
     precio: { labels:['< 1M','1M-2M','> 2M'], data:[210,128,39], colores:['#E3D5BC','#C9B688','#AE9142'] },
-    leadsSplit: { con:0, sin:0 },
+    leadsSplit: { con:200, sin:177 },
+    comisiones: {
+      valor:"427.646.731€", media:"5.50%",
+      desglose:[ {l:"Con leads · 200 propiedades", v:"12.429.006€"}, {l:"Sin leads · 177 propiedades", v:"11.090.505€"} ],
+      total:"23.519.512€"
+    },
+    topLeadsChart: {
+      labels:["MLG59316","MLG52795","MLG64212","MLG30870","MLG29680"],
+      data:[79,64,30,29,28],
+      colores:["#AE9142","#AE9142","#4F6B4A","#4F6B4A","#B08B3E"]
+    },
+    topLeads: [
+      { ref:"MLG59316", precio:"365.000€", com:"4%", enq:79, dias:504, meta:"100%", metaClase:"b-green" },
+      { ref:"MLG52795", precio:"575.000€", com:"5%", enq:64, dias:755, meta:"100%", metaClase:"b-green" },
+      { ref:"MLG64212", precio:"649.000€", com:"5%", enq:30, dias:320, meta:"80%", metaClase:"b-green" },
+      { ref:"MLG30870", precio:"890.000€", com:"5%", enq:29, dias:1776, meta:"100%", metaClase:"b-green" },
+      { ref:"MLG29680", precio:"3.495.000€", com:"5%", enq:28, dias:1888, meta:"83%", metaClase:"b-green" },
+      { ref:"MLG65325", precio:"595.000€", com:"5%", enq:28, dias:258, meta:"93%", metaClase:"b-green" }
+    ],
     antiguedad: {
       titulo: 'Días en mercado de la cartera live',
       alto: 200,
@@ -1049,6 +1143,39 @@ const REPORTS = [
       nota: 'De 453 propiedades disponibles, 377 están live. Se registran 164 visitas y hay 5 ofertas abiertas: 3 sobre propiedades live y 2 sobre venta reservada. Las visitas son el total registrado, no el número de propiedades visitadas.'
     },
     secciones: [
+      {
+        eyebrow: 'Propuesta del mes',
+        titulo: 'Las 10 propiedades estrella',
+        kpis: [
+          { eyebrow:'Propiedades seleccionadas', val:'10', sub:'de 194 que cumplen el perfil', accent:true },
+          { eyebrow:'Valor conjunto', val:'28.6M€', sub:'precio de venta' },
+          { eyebrow:'Comisión en juego', val:'1.32M€', sub:'5.6% del potencial total' },
+          { eyebrow:'Leads acumulados', val:'158', sub:'demanda ya demostrada' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Selección',
+            titulo: 'Propiedades a mover este mes',
+            headers: ['Ref.', 'Ubicación', 'Precio', '% Com.', 'Comisión', 'Meta', 'Leads', 'Días'],
+            destacar: 4,
+            filas: [
+              ['MLG29680', 'Lugar Cázulas, Otívar', '3.495.000€', '5%', '174.750€', '83%', '28', '1.888'],
+              ['MLG50052', 'Viaducto de los Garridos, Málaga', '2.200.000€', '5%', '110.000€', '100%', '23', '868'],
+              ['MLG49225', 'Cortijo Casas Viejas, Almogía', '2.500.000€', '5%', '125.000€', '100%', '14', '890'],
+              ['MLG22962', 'Villa Bellevue, Alhaurín el Grande', '2.850.000€', '5%', '142.500€', '100%', '12', '2.384'],
+              ['MLG67455', 'Camino del Marqués, Albolote', '2.950.000€', '5%', '147.500€', '83%', '14', '190'],
+              ['MLG69721', 'Pacífico 45, Málaga', '2.250.000€', '5%', '112.500€', '100%', '13', '104'],
+              ['MLG55527', 'Cortijo Roque, Motril', '2.350.000€', '5%', '117.500€', '83%', '19', '650'],
+              ['MLG66642', 'La Escucha 14, Málaga', '4.500.000€', '3%', '135.000€', '90%', '10', '195'],
+              ['MLG60466', 'Camino del Marchante, La Herradura', '1.950.000€', '4%', '78.000€', '100%', '17', '466'],
+              ['MLG63674', 'Calle Alclub 9, Almuñécar', '3.550.000€', '5%', '177.500€', '88%', '8', '335']
+            ],
+            total: ['Total · 10 propiedades', '', '28.595.000€', '', '1.320.250€', '92.7%', '158', ''],
+            nota: 'Mismo criterio que en Marbella: propiedades live, con comisión registrada y con al menos un lead. Sobre las 194 que cumplen el perfil se puntúa con un 40% de peso para la comisión, un 40% para la entrada de leads y un 20% para el Meta Score. La lista es una propuesta para discutir en la reunión.'
+          }
+        ],
+        nota: 'La selección de Málaga es de ticket mucho más bajo que la de Marbella, 28,6M€ frente a 68,9M€, y bastante más antigua: seis de las diez pasan de 300 días en mercado y dos superan los cinco años. Son propiedades con demanda demostrada que llevan tiempo esperando una acción.'
+      },
       {
         eyebrow: 'Comparativa entre oficinas',
         titulo: 'Málaga frente a Marbella',
@@ -1141,6 +1268,59 @@ const REPORTS = [
 
   acciones: {
     pendiente: 'Pendiente el detalle de paid de Málaga. La campaña de Meta DLF-09-010 es compartida MRB+MLG, así que su inversión no es atribuible solo a una oficina.',
+    marketingActions: [
+  {ref:'MLG63674',acc:[{d:'31/10/2025',c:'kt-offline',ch:'Offline',a:'Featured Offline · Property Collection',s:'Completada'},{d:'20/11/2025',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'09/01/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansión',s:'Completada'},{d:'15/01/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://archive.is/OsQiN',s:'Completada'},{d:'08/05/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansion print',s:'Completada'}]},
+  {ref:'MLG69721',acc:[{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG70428',acc:[{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG71416',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG69999',acc:[{d:'18/06/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'28/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'28/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG68056',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG50699',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG64741',acc:[{d:'04/12/2025',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'12/12/2025',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://www.expansion.com/directivos/estilo-vida/casas/album/2025/12/12/693afdd2e5fdea7b118b45ac_8.html',s:'Completada'},{d:'30/12/2025',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG57897',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG51238',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG30870',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG69108',acc:[{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG68706',acc:[{d:'24/07/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'},{d:'28/07/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'01/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Luxury Estate',s:'Activa'}]},
+  {ref:'MLG69608',acc:[{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG69336',acc:[{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG61601',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG67994',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG67993',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG68057',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG67455',acc:[{d:'24/03/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'25/03/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'26/03/2026',c:'kt-social',ch:'RRSS',a:'LinkedIn',s:'Completada'}]},
+  {ref:'MLG68450',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG62245',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG61604',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG62394',acc:[{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'16/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
+  {ref:'MLG64440',acc:[{d:'16/01/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://elpais.com/economia/negocios/2026-01-16/las-tres-casas-de-la-semana-rehabilitacion-en-el-pirineo-catalan-por-12-millones-de-euros.html',s:'Completada'},{d:'29/06/2026',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'}]},
+  {ref:'MLG66642',acc:[{d:'25/08/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'},{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG64441',acc:[{d:'08/05/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansion print',s:'Completada'},{d:'16/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'}]},
+  {ref:'MLG68059',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'},{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG67395',acc:[{d:'03/09/2026',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Activa'},{d:'03/09/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG71417',acc:[{d:'28/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'}]},
+  {ref:'MLG63351',acc:[{d:'04/12/2025',c:'kt-portal',ch:'Web',a:'Top Pick Web',s:'Completada'}]},
+  {ref:'MLG50982',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG50889',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG65006',acc:[{d:'09/09/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Activa'}]},
+  {ref:'MLG72032',acc:[{d:'09/09/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Activa'}]},
+  {ref:'MLG71957',acc:[{d:'09/09/2026',c:'kt-paid',ch:'Paid Media',a:'Meta Ads',s:'Activa'}]},
+  {ref:'MLG29680',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG54789',acc:[{d:'31/10/2025',c:'kt-offline',ch:'Offline',a:'Featured Offline · Property Collection',s:'Completada'}]},
+  {ref:'MLG45861',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG50052',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG49225',acc:[{d:'05/05/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · Thinkspain',s:'Completada'}]},
+  {ref:'MLG67135',acc:[{d:'28/04/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG64406',acc:[{d:'28/04/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'AuraHigueronII',acc:[{d:'27/05/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG71993',acc:[{d:'25/08/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG48619',acc:[{d:'31/10/2025',c:'kt-offline',ch:'Offline',a:'Featured Offline · Property Collection',s:'Completada'}]},
+  {ref:'Kosmos',acc:[{d:'28/01/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG63156',acc:[{d:'30/12/2025',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'BAHIA',acc:[{d:'24/02/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'SoleiaLiving',acc:[{d:'24/03/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]},
+  {ref:'MLG65570',acc:[{d:'24/02/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'}]}
+    ],
     destacadoTitulo: 'Acción destacada del periodo',
     destacado: {
       eyebrow: 'Hito · Apertura de oficina',
@@ -1184,6 +1364,33 @@ const REPORTS = [
       }
     ],
     secciones: [
+      {
+        eyebrow: 'Detalle operativo',
+        titulo: 'Cobertura de acciones de marketing',
+        kpis: [
+          { eyebrow:'Propiedades con acciones', val:'49', sub:'de 377 live · 13%' },
+          { eyebrow:'Sin ninguna acción', val:'328', sub:'87% de la cartera live', accent:true },
+          { eyebrow:'Acciones registradas', val:'111', sub:'85 completadas · 26 activas' },
+          { eyebrow:'Referencia Marbella', val:'29%', sub:'de su cartera live tiene acciones' }
+        ],
+        tablas: [
+          {
+            eyebrow: 'Cruce',
+            titulo: 'Acciones de marketing frente a leads',
+            headers: ['Grupo', 'Propiedades', 'Lectura'],
+            destacar: 1,
+            filas: [
+              ['Con acciones y con leads', '41', 'Funcionando'],
+              ['Con acciones y sin leads', '8', 'Revisar ficha, precio o canal'],
+              ['Sin acciones y con leads', '159', 'Traccionan solas, hay margen'],
+              ['Sin acciones y sin leads', '169', 'Punto ciego de la cartera']
+            ],
+            total: ['Total live', '377', ''],
+            nota: 'Las 169 propiedades sin ninguna acción ni ningún lead suman 184,6M€ de valor. Y hay algo más llamativo: 159 propiedades generan leads sin que se haya hecho nada sobre ellas. Málaga tracciona sola mucho más que Marbella, lo que sugiere que el portal trabaja por la oficina.'
+          }
+        ],
+        nota: 'Solo 13 de cada 100 propiedades live de Málaga han recibido alguna acción de marketing, frente a 29 de cada 100 en Marbella. Con una cartera un 55% más grande, la cobertura operativa es menos de la mitad.'
+      },
       {
         eyebrow: 'Email marketing',
         titulo: 'Alertas de propiedad',
@@ -1549,6 +1756,17 @@ function vistaAcciones(r) {
     h += elEquipo();
   }
 
+  /* tableros: varios kanban con titulo propio, para separar general de local */
+  (a.tableros || []).forEach(tb => {
+    h += elSectionHead(tb.eyebrow, tb.titulo, true);
+    const colColor = { 'col-coming':'#8C877E', 'col-todo':'#B08B3E', 'col-doing':'#55524C', 'col-done':'#4F6B4A', 'col-discuss':'#AE9142' };
+    h += `<div class="k-legend">${tb.columnas.map(col =>
+      `<span class="kl-item"><span class="kl-dot" style="background:${colColor[col.clase] || '#8C877E'};"></span>${esc(col.estado)}</span>`).join('')}</div>`;
+    h += `<div class="board" style="margin-bottom:28px;">${tb.columnas.map(col =>
+      `<div class="col ${col.clase}"><div class="col-head"><span class="col-name">${esc(col.estado)}</span><span class="col-cnt">${col.cards.length}</span></div>
+       <div class="col-body">${col.cards.map(elKCard).join('')}</div></div>`).join('')}</div>`;
+  });
+
   if (a.marketingActions && a.marketingActions.length) {
     const props = a.marketingActions;
     const nAcc = props.reduce((s, p) => s + p.acc.length, 0);
@@ -1564,16 +1782,6 @@ function vistaAcciones(r) {
             `<div class="ma-action"><span class="ma-date">${esc(x.d)}</span><span class="ma-ch ${x.c}">${esc(x.ch)}</span><span class="ma-act">${esc(x.a)}</span><span class="badge ${x.s === 'Completada' ? 'b-green' : 'b-amber'}">${esc(x.s)}</span></div>`).join('')}</div></div>`;
       }).join('')}</div>`;
   }
-  /* tableros: varios kanban con titulo propio, para separar general de local */
-  (a.tableros || []).forEach(tb => {
-    h += elSectionHead(tb.eyebrow, tb.titulo, true);
-    const colColor = { 'col-coming':'#8C877E', 'col-todo':'#B08B3E', 'col-doing':'#55524C', 'col-done':'#4F6B4A', 'col-discuss':'#AE9142' };
-    h += `<div class="k-legend">${tb.columnas.map(col =>
-      `<span class="kl-item"><span class="kl-dot" style="background:${colColor[col.clase] || '#8C877E'};"></span>${esc(col.estado)}</span>`).join('')}</div>`;
-    h += `<div class="board" style="margin-bottom:28px;">${tb.columnas.map(col =>
-      `<div class="col ${col.clase}"><div class="col-head"><span class="col-name">${esc(col.estado)}</span><span class="col-cnt">${col.cards.length}</span></div>
-       <div class="col-body">${col.cards.map(elKCard).join('')}</div></div>`).join('')}</div>`;
-  });
 
   h += paidHtml;
 
