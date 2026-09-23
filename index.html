@@ -950,7 +950,7 @@ const REPORTS = [
           { name:'Resale Buyers · MRB+MLG', res:0, resColor:'#55524C', imp:'21.702', ctr:'2.63%' }
         ],
         total: { res:1, imp:'209.873', ctr:'0.99%' },
-        nota: 'Cuatro de los cinco conjuntos pertenecen a una campaña compartida entre Marbella y Málaga, así que ni esa inversión ni ese único lead son atribuibles solo a Marbella.'
+        nota: 'Solo Propiedades Resale es exclusiva de Marbella. Los otros cuatro conjuntos son de la campaña DLF-09-010, compartida con Málaga, y aparecen también en el report de esa oficina con el mismo dinero y el mismo lead. Al consolidar el grupo hay que contarlos una sola vez.'
       },
       tablas: [
         {
@@ -1268,7 +1268,84 @@ const REPORTS = [
   },
 
   acciones: {
-    pendiente: 'Pendiente el detalle de paid de Málaga. La campaña de Meta DLF-09-010 es compartida MRB+MLG, así que su inversión no es atribuible solo a una oficina.',
+    pendiente: 'Faltan los responsables de cada acción. El detalle por propiedad, en la pestaña Marketing Actions, cubre 51 propiedades de la cartera available; la cobertura de aquí se mide solo sobre las 377 live.',
+    paid: {
+      titulo: 'Paid Media · 1 julio a 23 septiembre',
+      google: {
+        titulo: 'Google Ads · Captación',
+        kpis: [
+          { eyebrow:'Inversión', val:'545€', sub:'1 jul - 23 sep', accent:true },
+          { eyebrow:'Leads', val:'3.5', sub:'conversiones atribuidas' },
+          { eyebrow:'CPL medio', val:'156€', sub:'frente a 213€ en Marbella' },
+          { eyebrow:'CTR', val:'6.35%', sub:'frente a 4.98% en Marbella' }
+        ],
+        kpis2: [
+          { eyebrow:'Impresiones', val:'17.383', sub:'alcance total' },
+          { eyebrow:'Clics', val:'1.104', sub:'tráfico generado' },
+          { eyebrow:'CPC medio', val:'0.49€', sub:'frente a 0.82€ en Marbella' }
+        ],
+        chartTitulo: 'Leads por objetivo de campaña',
+        chart: {
+          labels:['Resale Buyers', 'Resale Sellers', 'Branding'],
+          data:[3, 0.5, 0],
+          colores:['#AE9142','#333138','#8C877E']
+        },
+        nota: 'Málaga invierte en un trimestre lo que Marbella gasta en cuatro días, pero lo hace mejor: 156€ de CPL frente a 213€, con un CTR del 6,35% y un CPC de 0,49€. Las tres campañas están solo en español; no hay ninguna en inglés.'
+      },
+      meta: {
+        titulo: 'Campaña compartida MRB+MLG',
+        filas: [
+          { name:'Resale Sellers', res:1, resColor:'#4F6B4A', imp:'45.789', ctr:'0.74%' },
+          { name:'Vídeos Feed', res:0, resColor:'#55524C', imp:'42.434', ctr:'0.51%' },
+          { name:'Branding', res:0, resColor:'#55524C', imp:'38.745', ctr:'1.03%' },
+          { name:'Resale Buyers', res:0, resColor:'#55524C', imp:'22.741', ctr:'2.55%' }
+        ],
+        total: { res:1, imp:'149.709', ctr:'1.03%' },
+        nota: 'Los cuatro conjuntos son de la campaña DLF-09-010, compartida entre Marbella y Málaga. Es exactamente el mismo dinero y el mismo lead que aparecen en el report de Marbella, no una inversión adicional.'
+      },
+      tablas: [
+        {
+          eyebrow: 'Visión conjunta',
+          titulo: 'Google Ads frente a Meta Ads',
+          headers: ['Canal', 'Inversión', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
+          destacar: 5,
+          filas: [
+            ['Google Ads · solo Málaga', '545€', '17.383', '1.104', '6.35%', '3.5', '156€'],
+            ['Meta Ads · compartida MRB+MLG', '1.142€', '149.709', '1.539', '1.03%', '1.0', '1.142€']
+          ],
+          total: ['Total atribuido', '1.687€', '167.092', '2.643', '1.58%', '4.5', '375€'],
+          nota: 'Cuidado al sumar: de los 1.687€ solo 545€ son inversión propia de Málaga. Los 1.142€ de Meta son de la campaña compartida y también figuran en el report de Marbella, así que el gasto real del grupo en esa campaña es 1.142€ y no el doble.'
+        },
+        {
+          eyebrow: 'Detalle',
+          titulo: 'Rendimiento por campaña de Google',
+          headers: ['Campaña', 'Impresiones', 'Clics', 'CTR', 'Leads', 'CPL'],
+          destacar: 4,
+          filas: [
+            ['Resale Buyers Captación ES', '10.013', '729', '7.28%', '3.0', '83€'],
+            ['Resale Sellers Captación ES', '5.982', '310', '5.18%', '0.5', '511€'],
+            ['Branding ES', '1.388', '65', '4.68%', '0', 'n/d']
+          ],
+          total: ['Total · 3 campañas', '17.383', '1.104', '6.35%', '3.5', '156€'],
+          nota: 'Resale Buyers concentra el 46% de la inversión y trae el 86% de los leads, con un CPL de 83€. Es la campaña más eficiente de las dos oficinas. Resale Sellers repite el patrón de Marbella: mucho gasto para medio lead.'
+        },
+        {
+          eyebrow: 'Comparativa entre oficinas',
+          titulo: 'Paid del trimestre en Marbella y Málaga',
+          headers: ['Métrica', 'Marbella', 'Málaga', 'Lectura'],
+          destacar: 1,
+          filas: [
+            ['Inversión propia en Google', '8.516€', '545€', 'Marbella invierte 16 veces más'],
+            ['Leads de Google', '40.1', '3.5', 'Proporcional a la inversión'],
+            ['CPL de Google', '213€', '156€', 'Málaga capta más barato'],
+            ['CTR de Google', '4.98%', '6.35%', 'Los anuncios de Málaga enganchan más'],
+            ['CPC de Google', '0.82€', '0.49€', 'La puja en Málaga es más barata'],
+            ['Idiomas activos', 'ES, EN, PL, NL', 'Solo ES', 'Málaga no ataca al comprador extranjero']
+          ],
+          nota: 'La conclusión salta sola: Málaga capta más barato que Marbella en todos los indicadores y apenas tiene presupuesto. Y el aprendizaje de Marbella, que el inglés convierte al doble de eficiencia que el español, todavía no se ha aplicado aquí porque no hay ninguna campaña en inglés.'
+        }
+      ]
+    },
     marketingActions: [
   {ref:'MLG63674',acc:[{d:'31/10/2025',c:'kt-offline',ch:'Offline',a:'Featured Offline · Property Collection',s:'Completada'},{d:'20/11/2025',c:'kt-social',ch:'RRSS',a:'Instagram Global',s:'Completada'},{d:'09/01/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansión',s:'Completada'},{d:'15/01/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · https://archive.is/OsQiN',s:'Completada'},{d:'08/05/2026',c:'kt-prensa',ch:'Prensa',a:'Prensa · Expansion print',s:'Completada'}]},
   {ref:'MLG69721',acc:[{d:'23/06/2026',c:'kt-email',ch:'Email',a:'Newsletter',s:'Completada'},{d:'14/07/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/08/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Completada'},{d:'14/09/2026',c:'kt-portal',ch:'Portales',a:'Portales Internacionales · ThinkSpain',s:'Activa'}]},
